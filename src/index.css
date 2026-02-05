@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'soehneMono';
+  src: url('/fonts/soehneMono-500.woff2') format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'suisse-600';
+  src: url('https://clerk.com/_next/static/media/d9478c0c6e4d6b06-s.p.woff2') format("woff2");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'suisse';
+  src: url('/fonts/suisse-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'suisse-text';
+  src: url('/fonts/suisse-text.woff2') format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'suisse';
+  src: url('/fonts/suisse-400.woff2') format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal
+}
+
+/* ================== ROOT ================== */
+
+:root {
+  font-family: "suisse", system-ui, sans-serif;
+  background-color: #f1f1f150;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* ================== FONTS ================== */
+
+.inter {
+  font-family: 'Inter';
+}
+
+.suisse {
+  font-family: 'suisse-text';
+}
+
+.suisse-600 {
+  font-family: 'suisse-600';
+}
+
+.soehne-mono-500 {
+  font-family: 'soehneMono';
+}
+
+/* ================== SCROLL ================== */
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari y Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================== CURSORS ================== */
+
+
+body {
+  cursor: url('/cursors/default.cur') 4 4, auto;
+}
+
+[style*="cursor:default"],
+.cursor-default {
+  cursor: url('/cursors/default.cur') 4 4, auto;
+}
+
+[style*="cursor:pointer"],
+.cursor-pointer {
+  cursor: url('/cursors/pointer.cur') 4 4, auto;
+}
+
+[style*="cursor:text"],
+.cursor-text {
+  cursor: url('/cursors/text.cur') 4 4, auto;
+}
+
+[style*="cursor:unavailable"],
+.cursor-unavailable {
+  cursor: url('/cursors/unavailable.cur') 4 4, auto;
+}
+
+/* ================== SELECTION ================== */
+
+::selection {
+  background: #dddddd;
+  color: rgb(46, 46, 46);
+}
+
+::-moz-selection {
+  background: #dddddd;
+  color: rgb(46, 46, 46);
+}
+
+image,
+img {
+  cursor: url('/cursors/default.cur') 4 4, auto;
+}
+
+/* ================== LINKS AND BUTTONS ================== */
+
+a,
+button {
+  cursor: url('/cursors/pointer.cur') 4 4, auto;
+}
+
+/* ================== NO SELECT & DRAG ================== */
+
+button, img, svg {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+img {
+  pointer-events: none;
+}
+
+/* ================== BG OVERLAY ================== */
+
+.bg-overlay {
+  background-image: url("/bg-pattern.png");
+  background-size: 2px 2px;
+}
+
+.bg-overlay-opacity-50 {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.040), rgba(94, 94, 94, 0.040)),
+    url("/bg-pattern.png");
+  background-size: 2px 2px;
+}
+
+
+
+
+
