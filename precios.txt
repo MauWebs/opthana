@@ -1,0 +1,56 @@
+const PRICING_PLANS = [
+  {
+    name: "Desarrollo de Sitios Webs",
+    description: "Armado completo de páginas webs",
+    priceArg: "$ 45.000",
+    priceUsd: "$ 45",
+    ideal: "Si querés tener presencia online y captar clientes de manera profesional",
+    features: [
+      "Branding de tu empresa",
+      "Diseño web profesional",
+      "Formularios de contacto",
+      "Regalos y lead mangnets",
+      "Newsletters para clientes",
+      "Email integrado (opcional)",
+      "Dominio y hosting (incluidos)",
+      "Gestión de blogs y contenido",
+      "Links de WhatsApp integrados",
+    ]
+  },
+  {
+    name: "Softwares y Plataformas",
+    description: "Desarrollo de sistemas completos",
+    priceArg: "$ 79.000",
+    priceUsd: "$ 79",
+    ideal: "Si querés crear un producto digital y automatizar procesos en tu empresa",
+    features: [
+      "Paneles de administración",
+      "Sistema de usuarios y roles",
+      "Registro de usaurios y sesiones",
+      "Bases de datos para tu empresa",
+      "Modelos de suscripción y pagos",
+      "Soporte técnico para tus clientes",
+      "Ingresos pasivos para tu empresa",
+      "Automatización de procesos y tareas",
+      "Seguridad avanzada y autnticaciónes",
+    ]
+  },
+  {
+    name: "Aplicaciones Móviles",
+    description: "Apps para Android y iOS",
+    priceArg: "$ 89.000",
+    priceUsd: "$ 89",
+    ideal: "Si buscás fidelizar clientes o generar ventas mediante productos o soluciones",
+    features: [
+      "App para Android y iOS",
+      "Notificaciones y avisos",
+      "Aplicación móvil a medida",
+      "Diseño de interfaz intuitivo",
+      "Cuentas y perfiles de usuarios",
+      "Plataforma con subscripciones",
+      "Registro de usaurios y sesiones",
+      "Pasarelas de pago para clientes",
+      "Gestión de contenido y publicaciones",
+    ]
+  },
+];

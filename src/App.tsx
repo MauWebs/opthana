@@ -515,26 +515,38 @@ export default function App() {
 
       <Services />
 
-      <div>
+      <div className="relative">
 
-        <div className="relative bg-[#131316] pb-[calc(theme(padding.32)+theme(height.11))] pt-32 select-none">
+        {/* BORDE SUPERIOR */}
+        <div className="absolute inset-x-0 -top-11 mt-[calc(-3/16*1rem)] flex items-end z-10">
+          <div className="mr-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316] bg-overlay" />
 
-          {/* BORDE SUPERIOR */}
-          <div className="absolute inset-x-0 -top-11 mt-[calc(-3/16*1rem)] flex items-end">
-            <div className="mr-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316]" />
+          <div className="mx-auto flex w-full justify-between px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
+            <div
+              className="-ml-2.5 w-[3.75rem] h-12 flex-none bg-[#131316] bg-overlay"
+              style={{
+                maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='-4 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 2.686 4 H -4 V 48 H 56 V 47 H 53.314 A 8 8 0 0 1 47.657 44.657 L 8.343 5.343 A 8 8 0 0 0 2.686 4 Z' fill='black'/%3E%3C/svg%3E\")",
+                WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='-4 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 2.686 4 H -4 V 48 H 56 V 47 H 53.314 A 8 8 0 0 1 47.657 44.657 L 8.343 5.343 A 8 8 0 0 0 2.686 4 Z' fill='black'/%3E%3C/svg%3E\")",
+                maskSize: "100% 100%",
+                WebkitMaskSize: "100% 100%",
+              }}
+            />
 
-            <div className="mx-auto flex w-full justify-between px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
-              <svg viewBox="0 0 56 48" aria-hidden="true" className="-ml-1.5 mb-[calc(-1/16*1rem)] w-14 flex-none overflow-visible fill-[#131316]">
-                <path d="M 2.686 3 H -4 V 48 H 56 V 47 H 53.314 A 8 8 0 0 1 47.657 44.657 L 8.343 5.343 A 8 8 0 0 0 2.686 3 Z" />
-              </svg>
-
-              <svg viewBox="0 0 56 48" aria-hidden="true" className="-mr-1.5 mb-[calc(-1/16*1rem)] w-14 flex-none overflow-visible fill-[#131316]">
-                <path d="M 53.314 3 H 60 V 48 H 0 V 47 H 2.686 A 8 8 0 0 0 8.343 44.657 L 47.657 5.343 A 8 8 0 0 1 53.314 3 Z" />
-              </svg>
-            </div>
-
-            <div className="ml-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316]" />
+            <div
+              className="-mr-2.5 w-[3.75rem] h-12 flex-none bg-[#131316] bg-overlay"
+              style={{
+                maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 53.314 4 H 60 V 48 H 0 V 47 H 2.686 A 8 8 0 0 0 8.343 44.657 L 47.657 5.343 A 8 8 0 0 1 53.314 4 Z' fill='black'/%3E%3C/svg%3E\")",
+                WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 53.314 4 H 60 V 48 H 0 V 47 H 2.686 A 8 8 0 0 0 8.343 44.657 L 47.657 5.343 A 8 8 0 0 1 53.314 4 Z' fill='black'/%3E%3C/svg%3E\")",
+                maskSize: "100% 100%",
+                WebkitMaskSize: "100% 100%",
+              }}
+            />
           </div>
+
+          <div className="ml-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316] bg-overlay" />
+        </div>
+
+        <div className="relative overflow-hidden bg-[#131316] pb-[calc(theme(padding.32)+theme(height.11))] pt-32 select-none">
 
           {/* CIRCUITOS INICIO */}
           <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%] ">
