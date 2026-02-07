@@ -13,7 +13,7 @@ const blurLayers = [
   { blur: 16, end: 45 },
 ];
 
-export default function Navbar() {
+export default function Navbar({ isDark }: { isDark?: boolean }) {
 
   return (
     <>

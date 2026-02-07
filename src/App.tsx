@@ -132,7 +132,7 @@ function FeaturesAnimated() {
   );
 }
 
-function SecureServices({ sectionRef }: { sectionRef?: React.RefObject<HTMLDivElement> }) {
+function SecureServices({ sectionRef }: { sectionRef?: React.RefObject<HTMLDivElement | null> }) {
   return (
     <div className="relative" ref={sectionRef}>
 
