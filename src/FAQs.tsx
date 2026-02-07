@@ -62,16 +62,16 @@ export default function FAQs() {
         <section className="relative mx-auto max-w-[63rem] sm:pb-20 sm:pt-10">
 
           <div
-            className="absolute inset-y-0 left-0 hidden w-px md:block"
+            className="absolute inset-y-0 right-full hidden w-px md:block"
             style={{
-              background: "linear-gradient(to bottom, rgba(235,235,236,0) 0%, #EBEBEC 35%, #ebebec73 calc(100% - 6rem), #ebebec13 100%)",
+              background: "linear-gradient(to bottom, rgb(235, 235, 236) 0%, #EBEBEC 35%, #ebebec73 calc(100% - 6rem), #ebebec13 100%)",
             }}
           ></div>
 
           <div
-            className="absolute inset-y-0 right-0 hidden w-px md:block"
+            className="absolute inset-y-0 left-full hidden w-px md:block"
             style={{
-              background: "linear-gradient(to bottom, rgba(235,235,236,0) 0%, #EBEBEC 35%, #ebebec73 calc(100% - 6rem), #ebebec13 100%)",
+              background: "linear-gradient(to bottom, rgb(235, 235, 236) 0%, #EBEBEC 35%, #ebebec73 calc(100% - 6rem), #ebebec13 100%)",
             }}
           ></div>
 

@@ -262,7 +262,7 @@ function AuthCardPreview() {
 
             <div className="flex h-12 items-center justify-center gap-1 text-[12px] text-gray-500">
               <span>Desarrollado por</span>
-              <span className="text-gray-600 suisse-600">Ophtana Tech</span>
+              <span className="text-gray-600 suisse-600">Opthana Tech</span>
             </div>
           </div>
 

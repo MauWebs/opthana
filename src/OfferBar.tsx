@@ -2,7 +2,7 @@ export default function OfferBar() {
   return (
     <>
       <a
-        href="/"
+        href="#offers"
         className="sticky top-0 isolate group absolute top-0 z-1000 mt-0 flex w-full gap-x-4 whitespace-nowrap bg-[#131316] py-2 text-[12px] mb-1 text-white outline-none cursor-pointer [&_div]:cursor-[inherit] [&_svg]:cursor-[inherit]  tracking-[.4px] bg-overlay"
       >
         {/* LEFT SKEW */}
@@ -12,7 +12,7 @@ export default function OfferBar() {
         ></div>
 
         {/* TEXT */}
-        <div className="truncate">Desarrollamos tu web para vos por $45 dólares</div>
+        <div className="truncate">Desarrollamos tu web para vos por <span className="text-[10.5px]">$ 79.000</span> pesos argentinos</div>
 
         {/* SEPARATOR */}
         <div className="my-[calc(3/16*1rem)] w-px flex-none bg-white/20"></div>

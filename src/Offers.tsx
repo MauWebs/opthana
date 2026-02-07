@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 function ContactModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +34,7 @@ function ContactModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
     if (!Object.values(newErrors).some(Boolean)) {
       setIsSubmitting(true);
       try {
-        const url = "https://script.google.com/macros/s/AKfycbyR-DgjPy1ADAP9PdlEcUb8WIMLO4W506Zn-h4Cjp7FieWQdo5Tl4XjwsFJrVjZOl54/exec";
+        const url = "https://script.google.com/macros/s/AKfycbxYDwpWg6DSXFtghPn7TBo_ckP6-cJZsqL9SqBYp8imtdDWb8F-B7_GDUnWSqa7lZxeVw/exec";
 
         const now = new Date();
         const formattedDate = `Se añadió el día ${now.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} a las ${now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: false })}`;
@@ -249,8 +250,8 @@ const PRICING_PLANS = [
   {
     name: "Desarrollo de Sitios Webs",
     description: "Armado completo de páginas webs",
-    priceArg: "$ 45.000",
-    priceUsd: "$ 45",
+    priceArg: "$ 79.000",
+    priceUsd: "$ 79",
     ideal: "Si querés tener presencia online y captar clientes de manera profesional",
     features: [
       "Branding de tu empresa",
@@ -267,8 +268,8 @@ const PRICING_PLANS = [
   {
     name: "Softwares y Plataformas",
     description: "Desarrollo de sistemas completos",
-    priceArg: "$ 89.000",
-    priceUsd: "$ 89",
+    priceArg: "$ 129.000",
+    priceUsd: "$ 129",
     ideal: "Si querés crear un producto digital y automatizar procesos en tu empresa",
     features: [
       "Paneles de administración",
@@ -285,8 +286,8 @@ const PRICING_PLANS = [
   {
     name: "Aplicaciones Móviles",
     description: "Apps para Android y iOS",
-    priceArg: "$ 95.000",
-    priceUsd: "$ 95",
+    priceArg: "$ 149.000",
+    priceUsd: "$ 149",
     ideal: "Si buscás fidelizar clientes o generar ventas mediante productos o soluciones",
     features: [
       "App para Android y iOS",
