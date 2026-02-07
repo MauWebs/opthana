@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import OfferBar from "./OfferBar";
 import Services from "./Services";
@@ -254,14 +254,11 @@ function SecureServices({ sectionRef }: { sectionRef?: React.RefObject<HTMLDivEl
 }
 
 export default function App() {
-  const [isNavbarDark, setIsNavbarDark] = useState(false);
   const secureServicesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!secureServicesRef.current) return;
-      const rect = secureServicesRef.current.getBoundingClientRect();
-      setIsNavbarDark(rect.top <= 100 && rect.bottom >= 100);
+      if (!secureServicesRef.current) return; 
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -428,7 +425,7 @@ export default function App() {
 
       <OfferBar />
 
-      <Navbar isDark={isNavbarDark} />
+      <Navbar />
 
       <div className="relative isolate overflow-hidden bg-gray-50 pb-60 pt-[calc(theme(spacing.16)+theme(spacing.20))] sm:-mt-[10px] sm:pb-101 sm:pt-[calc(theme(spacing.16)+theme(spacing.32))] select-none">
 
