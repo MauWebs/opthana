@@ -55,7 +55,7 @@ export default function OfferBar() {
         {/* RIGHT SKEW */}
         <div
           aria-hidden="true"
-          className="relative -my-2 flex-grow overflow-hidden skew-right bg-overlay"
+          className="relative -my-2 flex-grow overflow-hidden skew-right"
         ></div>
       </a>
 

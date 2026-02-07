@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import Navbar from "./Navbar";
 import OfferBar from "./OfferBar";
 import Services from "./Services";
@@ -10,19 +10,20 @@ import FeaturesGrid from "./FeaturesGrid";
 function FeaturesAnimated() {
   return (
     <section>
-      <div className="mt-20 sm:-mt-15 sm:-mb-15 lg:text-center px-6 sm:px-3 lg:px-0">
+      <div className="mt-20 sm:-mt-15 sm:-mb-15 text-center px-6 sm:px-3 lg:px-0">
+
         {/* Línea degradada */}
         <h2 className="relative z-10 mt-4 text-[#9785ff] text-[13px] suisse mt-9 tracking-[0.02em]">Servicios Seguros</h2>
 
         {/* Contenedor de animación */}
         <div
           aria-hidden="true"
-          className="relative mt-10 h-[20rem] select-none mx-auto max-w-[63rem] group isolate flex flex-col rounded-2xl bg-[#212126] shadow-[inset_0_1px,inset_0_0_0_1px] shadow-white/[0.025] overflow-hidden z-500 bg-overlay"
+          className="relative mt-7 h-[20rem] select-none mx-auto max-w-[63rem] group isolate flex flex-col rounded-2xl bg-[#212126] shadow-[inset_0_1px,inset_0_0_0_1px] shadow-white/[0.025] overflow-hidden z-500 bg-overlay"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask:radial-gradient(50%_70%_at_center,white_36%,transparent_92%)]">
               {/* Círculos de fondo fijos */}
-              <svg viewBox="0 0 64 64" className="size-16 overflow-visible bg-overlay" aria-hidden="true">
+              <svg viewBox="0 0 64 64" className="size-16 overflow-visible" aria-hidden="true">
                 <g stroke="#fff" strokeOpacity="0.05" fill="none">
                   {[320, 288, 256, 224, 192, 160, 128, 96, 64].map((r) => (
                     <circle key={r} cx="32" cy="32" r={r}></circle>
@@ -131,7 +132,141 @@ function FeaturesAnimated() {
   );
 }
 
+function SecureServices({ sectionRef }: { sectionRef?: React.RefObject<HTMLDivElement> }) {
+  return (
+    <div className="relative" ref={sectionRef}>
+
+      {/* BORDE SUPERIOR */}
+      <div className="absolute inset-x-0 -top-11 mt-[calc(-3/16*1rem)] flex items-end z-10">
+        <div className="mr-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316] bg-overlay" />
+
+        <div className="mx-auto flex w-full justify-between px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
+          <div
+            className="-ml-2.5 w-[3.75rem] h-12 flex-none bg-[#131316] bg-overlay"
+            style={{
+              maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='-4 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 2.686 4 H -4 V 48 H 56 V 47 H 53.314 A 8 8 0 0 1 47.657 44.657 L 8.343 5.343 A 8 8 0 0 0 2.686 4 Z' fill='black'/%3E%3C/svg%3E\")",
+              WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='-4 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 2.686 4 H -4 V 48 H 56 V 47 H 53.314 A 8 8 0 0 1 47.657 44.657 L 8.343 5.343 A 8 8 0 0 0 2.686 4 Z' fill='black'/%3E%3C/svg%3E\")",
+              maskSize: "100% 100%",
+              WebkitMaskSize: "100% 100%",
+            }}
+          />
+
+          <div
+            className="-mr-2.5 w-[3.75rem] h-12 flex-none bg-[#131316] bg-overlay"
+            style={{
+              maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 53.314 4 H 60 V 48 H 0 V 47 H 2.686 A 8 8 0 0 0 8.343 44.657 L 47.657 5.343 A 8 8 0 0 1 53.314 4 Z' fill='black'/%3E%3C/svg%3E\")",
+              WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 53.314 4 H 60 V 48 H 0 V 47 H 2.686 A 8 8 0 0 0 8.343 44.657 L 47.657 5.343 A 8 8 0 0 1 53.314 4 Z' fill='black'/%3E%3C/svg%3E\")",
+              maskSize: "100% 100%",
+              WebkitMaskSize: "100% 100%",
+            }}
+          />
+        </div>
+
+        <div className="ml-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316] bg-overlay" />
+      </div>
+
+      <div className="relative overflow-hidden bg-[#131316] pb-[calc(theme(padding.32)+theme(height.11))] pt-32 select-none">
+
+        {/* CIRCUITOS INICIO */}
+        <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%] ">
+          <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="ml-[calc(0/16*1rem)] mt-[calc(-92/16*1rem)] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_30%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] sm:ml-[calc(-340/16*1rem)] md:ml-[calc(-400/16*1rem)] lg:ml-[calc(-500/16*1rem)] xl:ml-[calc(-564/16*1rem)]" src="/circuit-dark.webp"></img>
+        </div>
+
+        <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%] ">
+          <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(302/16*1rem)] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_30%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] sm:ml-[calc(-340/16*1rem)]" src="/circuit-dark.webp"></img>
+        </div>
+
+        <div className="absolute inset-x-0 top-0 left-200 overflow-hidden sm:pl-[50%] ">
+          <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(302/16*1rem)] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(27rem_27rem_at_30%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] sm:ml-[calc(-340/16*1rem)]" src="/circuit-dark.webp"></img>
+        </div>
+
+
+        <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
+          <img
+            alt=""
+            loading="lazy"
+            width="1748"
+            height="1982"
+            decoding="async"
+            data-nimg="1"
+            className="
+      mt-[calc(-100/16*1rem)]
+      ml-[16rem]
+      w-[calc(874/16*1rem)]
+      max-w-none
+      rotate-180
+      [mask:linear-gradient(to_bottom,transparent_0%,transparent_35%,white_55%,white_100%)]
+    "
+            src="/circuit-dark.webp"
+          />
+        </div>
+
+
+        <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
+          <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(-162/16*1rem)] ml-[-27.5rem] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_20%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] rotate-90" src="/circuit-dark.webp"></img>
+        </div>
+
+        <div className="absolute inset-x-0 top-0 overflow-hidden">
+          <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="[mask:radial-gradient(26.5625rem_24.375rem_at_50%_calc(92/16*1rem),rgba(255,255,255,0.9),transparent)] sm:ml-[calc(-200/16*1rem)]  mt-[calc(-10/14*1rem)] ml-[-23.5rem] w-[calc(874/16*1rem)] max-w-none" src="/circuit-dark.webp"></img>
+        </div>
+
+        <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
+          <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(-162/16*1rem)] ml-[-27.5rem] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(3rem_10rem_at_90%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] rotate-90" src="/circuit-dark.webp"></img>
+        </div>
+
+        <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
+          <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(-221/16*1rem)] mr-[80.5rem] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_90%_calc(92/16*1rem),rgba(255,255,255,1),transparent)]" src="/circuit-dark.webp"></img>
+        </div>
+
+        <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
+          <img
+            alt=""
+            loading="lazy"
+            width="1748"
+            height="1982"
+            decoding="async"
+            className="
+      mt-[calc(270/16*1rem)]
+      ml-[-73rem]
+      w-[calc(874/16*1rem)]
+      max-w-none
+      rotate-90
+      [mask:radial-gradient(20rem_100rem_at_20%_50%,rgba(255,255,255,1),transparent)]
+    "
+            src="/circuit-dark.webp"
+          />
+        </div>
+
+        {/* CIRCUITOS FIN */}
+
+        <div className="absolute inset-0 bg-overlay pointer-events-none"></div>
+
+        <FeaturesAnimated />
+
+      </div>
+
+      {/* BORDE INFERIOR */}
+      <div className="mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem] z-1000000"><div className="relative -mx-2.5 flex -bottom-1 -mt-12 "><svg viewBox="0 0 64 48" className="w-16 flex-none fill-gray-50" aria-hidden="true" ><path d="M51.657 2.343 12.343 41.657A8 8 0 0 1 6.686 44H0v4h64V0h-6.686a8 8 0 0 0-5.657 2.343Z"></path></svg><div className="-mx-px flex-auto bg-gray-50"></div><svg viewBox="0 0 64 48" className="w-16 flex-none fill-gray-50" aria-hidden="true" ><path d="m12.343 2.343 39.314 39.314A8 8 0 0 0 57.314 44H64v4H0V0h6.686a8 8 0 0 1 5.657 2.343Z"></path></svg></div>
+      </div>
+
+    </div>
+  )
+}
+
 export default function App() {
+  const [isNavbarDark, setIsNavbarDark] = useState(false);
+  const secureServicesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!secureServicesRef.current) return;
+      const rect = secureServicesRef.current.getBoundingClientRect();
+      setIsNavbarDark(rect.top <= 100 && rect.bottom >= 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     const handleDragStart = (e: DragEvent) => {
       const target = e.target;
@@ -293,7 +428,7 @@ export default function App() {
 
       <OfferBar />
 
-      <Navbar />
+      <Navbar isDark={isNavbarDark} />
 
       <div className="relative isolate overflow-hidden bg-gray-50 pb-60 pt-[calc(theme(spacing.16)+theme(spacing.20))] sm:-mt-[10px] sm:pb-101 sm:pt-[calc(theme(spacing.16)+theme(spacing.32))] select-none">
 
@@ -515,122 +650,7 @@ export default function App() {
 
       <Services />
 
-      <div className="relative">
-
-        {/* BORDE SUPERIOR */}
-        <div className="absolute inset-x-0 -top-11 mt-[calc(-3/16*1rem)] flex items-end z-10">
-          <div className="mr-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316] bg-overlay" />
-
-          <div className="mx-auto flex w-full justify-between px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
-            <div
-              className="-ml-2.5 w-[3.75rem] h-12 flex-none bg-[#131316] bg-overlay"
-              style={{
-                maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='-4 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 2.686 4 H -4 V 48 H 56 V 47 H 53.314 A 8 8 0 0 1 47.657 44.657 L 8.343 5.343 A 8 8 0 0 0 2.686 4 Z' fill='black'/%3E%3C/svg%3E\")",
-                WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='-4 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 2.686 4 H -4 V 48 H 56 V 47 H 53.314 A 8 8 0 0 1 47.657 44.657 L 8.343 5.343 A 8 8 0 0 0 2.686 4 Z' fill='black'/%3E%3C/svg%3E\")",
-                maskSize: "100% 100%",
-                WebkitMaskSize: "100% 100%",
-              }}
-            />
-
-            <div
-              className="-mr-2.5 w-[3.75rem] h-12 flex-none bg-[#131316] bg-overlay"
-              style={{
-                maskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 53.314 4 H 60 V 48 H 0 V 47 H 2.686 A 8 8 0 0 0 8.343 44.657 L 47.657 5.343 A 8 8 0 0 1 53.314 4 Z' fill='black'/%3E%3C/svg%3E\")",
-                WebkitMaskImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 53.314 4 H 60 V 48 H 0 V 47 H 2.686 A 8 8 0 0 0 8.343 44.657 L 47.657 5.343 A 8 8 0 0 1 53.314 4 Z' fill='black'/%3E%3C/svg%3E\")",
-                maskSize: "100% 100%",
-                WebkitMaskSize: "100% 100%",
-              }}
-            />
-          </div>
-
-          <div className="ml-[calc(-1*(theme(spacing.8)-theme(spacing[1.5])))] h-11 flex-auto bg-[#131316] bg-overlay" />
-        </div>
-
-        <div className="relative overflow-hidden bg-[#131316] pb-[calc(theme(padding.32)+theme(height.11))] pt-32 select-none">
-
-          {/* CIRCUITOS INICIO */}
-          <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%] ">
-            <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="ml-[calc(0/16*1rem)] mt-[calc(-92/16*1rem)] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_30%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] sm:ml-[calc(-340/16*1rem)] md:ml-[calc(-400/16*1rem)] lg:ml-[calc(-500/16*1rem)] xl:ml-[calc(-564/16*1rem)]" src="/circuit-dark.webp"></img>
-          </div>
-
-          <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%] ">
-            <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(302/16*1rem)] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_30%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] sm:ml-[calc(-340/16*1rem)]" src="/circuit-dark.webp"></img>
-          </div>
-
-          <div className="absolute inset-x-0 top-0 left-200 overflow-hidden sm:pl-[50%] ">
-            <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(302/16*1rem)] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(27rem_27rem_at_30%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] sm:ml-[calc(-340/16*1rem)]" src="/circuit-dark.webp"></img>
-          </div>
-
-
-          <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
-            <img
-              alt=""
-              loading="lazy"
-              width="1748"
-              height="1982"
-              decoding="async"
-              data-nimg="1"
-              className="
-      mt-[calc(-100/16*1rem)]
-      ml-[16rem]
-      w-[calc(874/16*1rem)]
-      max-w-none
-      rotate-180
-      [mask:linear-gradient(to_bottom,transparent_0%,transparent_35%,white_55%,white_100%)]
-    "
-              src="/circuit-dark.webp"
-            />
-          </div>
-
-
-          <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
-            <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(-162/16*1rem)] ml-[-27.5rem] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_20%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] rotate-90" src="/circuit-dark.webp"></img>
-          </div>
-
-          <div className="absolute inset-x-0 top-0 overflow-hidden">
-            <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="[mask:radial-gradient(26.5625rem_24.375rem_at_50%_calc(92/16*1rem),rgba(255,255,255,0.9),transparent)] sm:ml-[calc(-200/16*1rem)]  mt-[calc(-10/14*1rem)] ml-[-23.5rem] w-[calc(874/16*1rem)] max-w-none" src="/circuit-dark.webp"></img>
-          </div>
-
-          <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
-            <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(-162/16*1rem)] ml-[-27.5rem] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(3rem_10rem_at_90%_calc(92/16*1rem),rgba(255,255,255,1),transparent)] rotate-90" src="/circuit-dark.webp"></img>
-          </div>
-
-          <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
-            <img alt="" loading="lazy" width="1748" height="1982" decoding="async" data-nimg="1" className="mt-[calc(-221/16*1rem)] mr-[80.5rem] w-[calc(874/16*1rem)] max-w-none [mask:radial-gradient(26.5625rem_24.375rem_at_90%_calc(92/16*1rem),rgba(255,255,255,1),transparent)]" src="/circuit-dark.webp"></img>
-          </div>
-
-          <div className="absolute inset-x-0 top-0 overflow-hidden sm:pl-[50%]">
-            <img
-              alt=""
-              loading="lazy"
-              width="1748"
-              height="1982"
-              decoding="async"
-              className="
-      mt-[calc(270/16*1rem)]
-      ml-[-73rem]
-      w-[calc(874/16*1rem)]
-      max-w-none
-      rotate-90
-      [mask:radial-gradient(20rem_100rem_at_20%_50%,rgba(255,255,255,1),transparent)]
-    "
-              src="/circuit-dark.webp"
-            />
-          </div>
-
-          {/* CIRCUITOS FIN */}
-
-          <div className="absolute inset-0 bg-overlay pointer-events-none"></div>
-
-          <FeaturesAnimated />
-
-        </div>
-
-        {/* BORDE INFERIOR */}
-        <div className="mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem] z-1000000"><div className="relative -mx-2.5 flex -bottom-1 -mt-12 "><svg viewBox="0 0 64 48" className="w-16 flex-none fill-gray-50" aria-hidden="true" ><path d="M51.657 2.343 12.343 41.657A8 8 0 0 1 6.686 44H0v4h64V0h-6.686a8 8 0 0 0-5.657 2.343Z"></path></svg><div className="-mx-px flex-auto bg-gray-50"></div><svg viewBox="0 0 64 48" className="w-16 flex-none fill-gray-50" aria-hidden="true" ><path d="m12.343 2.343 39.314 39.314A8 8 0 0 0 57.314 44H64v4H0V0h6.686a8 8 0 0 1 5.657 2.343Z"></path></svg></div>
-        </div>
-
-      </div>
+      <SecureServices sectionRef={secureServicesRef} />
 
       <Offers />
 

@@ -1,7 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function FeaturesModal({ activeFeature, setActiveFeature, features }: { activeFeature: number | null, setActiveFeature: (index: number | null) => void, features: any[] }) {
-  const feature = activeFeature !== null ? features[activeFeature] : null;
+function FeaturesModal({ activeFeature, setActiveFeature, features  }: { activeFeature: number | null, setActiveFeature: (index: number | null) => void, features: any[] }) {
+  const feature = activeFeature !== null ? features[activeFeature] : null ;
+  const isOpen = activeFeature !== null;
+
+   useEffect(() => {
+      if (isOpen) {
+        document.body.style.overflow = "hidden"
+      } else {
+        document.body.style.overflow = ""
+      }
+  
+      return () => {
+        document.body.style.overflow = ""
+      }
+    }, [isOpen])
+    
 
   return (
     
@@ -128,7 +142,6 @@ function FeaturesModal({ activeFeature, setActiveFeature, features }: { activeFe
               {/* CONTENT */}
               <div className="flex-1 overflow-y-auto p-6 text-[13px] text-[#42434D] custom-scroll">
                 {feature?.modalContent}
-                <div className="h-4" />
               </div>
 
 
@@ -268,8 +281,8 @@ export default function FeaturesGrid() {
                   <hr className="m-0 border-black/10" />
                 </div>
               </div>
-              <div className="flex items-center gap-5 py-3">
-                <p className="flex-1 text-[12px] text-[#131316]/90">Suscripción</p>
+              <div className="flex items-start gap-5 py-3">
+                <p className="flex-1 text-[12px] text-[#131316]/90 mt-2.5">Suscripción</p>
                 <div className="w-80">
                   <div className="flex h-[2.625rem] items-center justify-between rounded-md bg-white px-3 shadow-[0_0_0_0.82px_rgba(0,0,0,0.06),0_0_1.64px_rgba(0,0,0,0.08),0_0.82px_1.64px_rgba(0,0,0,0.06)]">
                     <div className="flex flex-col gap-0.5">
@@ -290,8 +303,8 @@ export default function FeaturesGrid() {
                 </div>
               </div>
               <hr className="m-0 border-black/10" />
-              <div className="flex items-center gap-5 py-3">
-                <p className="flex-1 text-[12px] text-[#131316]/90">Métodos de pago</p>
+              <div className="flex items-start gap-5 py-3">
+                <p className="flex-1 text-[12px] text-[#131316]/90 mt-2">Métodos de pago</p>
                 <div className="w-80">
                   <div className="flex cursor-pointer items-center gap-1.5 rounded-md px-2 py-2 hover:bg-gray-100/80 hover:shadow-[0_0_0_0.82px_rgba(0,0,0,0.06),0_0_1.64px_rgba(0,0,0,0.08),0_0.82px_1.64px_rgba(0,0,0,0.06)]">
                     <img src="/icons/card.svg" alt="" className="h-4 w-4" />
