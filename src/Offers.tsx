@@ -34,7 +34,7 @@ function ContactModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
     if (!Object.values(newErrors).some(Boolean)) {
       setIsSubmitting(true);
       try {
-        const url = "https://script.google.com/macros/s/AKfycbxYDwpWg6DSXFtghPn7TBo_ckP6-cJZsqL9SqBYp8imtdDWb8F-B7_GDUnWSqa7lZxeVw/exec";
+        const url = "https://script.google.com/macros/s/AKfycbwj-DxQPS-UMLV2zeTI6V8FuTscGhozbNPOsB5vHI5slywL_vrHsIL1gcIpQyYpZT30Lw/exec";
 
         const now = new Date();
         const formattedDate = `Se añadió el día ${now.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} a las ${now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: false })}`;

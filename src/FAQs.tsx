@@ -97,7 +97,7 @@ export default function FAQs() {
                 <div key={index} className="border-b border-[#42434d]/20 border-dashed pb-3">
                   <button
                     type="button"
-                    className={`w-full flex justify-between items-center py-3 text-[13px] tracking-[.2px] transition-colors duration-300 suisse-600 ${isOpen ? "text-[#0966FE]/85" : "text-[#131316]/85 hover:text-[#0966FE]/85"
+                    className={`w-full flex justify-between text-left py-3 text-[13px] tracking-[.2px] transition-colors duration-300 suisse-600 ${isOpen ? "text-[#0966FE]/85" : "text-[#131316]/85 hover:text-[#0966FE]/85"
                       }`}
                     onClick={() =>
                       setOpenIndex(isOpen ? null : index)

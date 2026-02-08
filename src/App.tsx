@@ -418,10 +418,10 @@ function HeroHeader() {
 
       <div className="absolute inset-0 flex items-center justify-center z-30">
         <div className="text-center mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem] mt-[63px]">
-          <h1 className="mx-auto max-w-4xl text-balance font-bold tracking-tight text-[#131316] text-4xl sm:text-5xl lg:text-[4rem] lg:leading-[4.5rem] lg:tracking-[-0.035em]">
+          <h1 className="mx-auto max-w-4xl text-balance font-bold tracking-tight text-[#131316] text-[25px] sm:leading-[2.5rem] sm:text-[40px] lg:text-[3.8rem] lg:leading-[3.5rem] text-base/6 lg:tracking-[-0.035em]">
             Desarrollo de Software y Aplicaciones para Empresas
           </h1>
-          <p className="mx-auto mt-4 max-w-md text-pretty text-gray-600 sm:max-w-[800px] text-base sm:text-[18px] leading-7">
+          <p className="mx-auto mt-4 max-w-md text-pretty text-gray-600 sm:max-w-[800px] text-base text-[14px] sm:text-[17.5px] text-base/5">
             Desarrollamos soluciones digitales a medida, desde sitios web de alto rendimiento hasta plataformas y sistemas pensadas para empresas que
             necesitan más ventas y control.
           </p>
