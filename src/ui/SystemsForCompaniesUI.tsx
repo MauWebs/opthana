@@ -26,11 +26,11 @@ export default function SystemsForCompaniesUI() {
           </div>
 
           <div className="flex flex-col gap-1 px-2.5">
-            {[
+            {([
               ["Empresa", "/icons/building.svg", false],
               ["Miembros", "/icons/member.svg", true],
               ["Campañas", "/icons/campaign.svg", false],
-            ].map(([label, icon, active], i) => (
+            ] as const).map(([label, icon, active], i) => (
               <div
                 key={i}
                 className={`flex h-[1.625rem] items-center gap-2 rounded-md px-2.5 text-[10px] cursor-pointer ${active
@@ -236,13 +236,12 @@ export default function SystemsForCompaniesUI() {
     boxShadow:
       "0 0 0 1px rgba(0,0,0,0.08), 0 1px 0 rgba(0,0,0,0.02), 0 2px 3px -1px rgba(0,0,0,0.08)",
     fontSize: "9px",
-    fontWeight: 500,
     lineHeight: "14px",
     color: "#2F3037",
     background: "#fff",
   }}
 >
-  <span style={{padding: "0 4px"}}>10</span>
+  <span className="suisse" style={{padding: "0 4px"}}>10</span>
 
   <svg
     width="14"
