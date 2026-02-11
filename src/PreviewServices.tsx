@@ -298,7 +298,7 @@ export default function PreviewServices() {
                                 </div>
                               </div>
                             ) : (
-                              <div className="flex flex-1 flex-col rounded-lg bg-white">
+                              <div className="flex flex-1 flex-col bg-white">
                                 
                                 <div className="flex flex-col gap-3 px-6 py-5">
                                   <h2 className="text-sm font-bold leading-5 -tracking-[0.01em] text-[#131316]/90 text-start">Suscripción</h2>
