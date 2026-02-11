@@ -6,8 +6,11 @@ import Footer from "./Footer";
 import Offers from "./Offers";
 import FeaturesGrid from "./FeaturesGrid";
 import PreviewServices from "./PreviewServices";
+import { ContactModalProvider, useContactModal } from "./ContactModalContext";
+import ContactModal from "./ContactModal";
 
 function FeaturesAnimated() {
+  const { openModal } = useContactModal();
   return (
     <section>
       <div className="mt-20 sm:-mt-15 sm:-mb-15 text-center px-6 sm:px-3 lg:px-0">
@@ -107,6 +110,7 @@ function FeaturesAnimated() {
         </p>
 
         <button
+           onClick={openModal}
           className="group relative flex h-8 w-full items-center justify-center overflow-hidden rounded-md text-[13px] text-white transition-all duration-150 hover:bg-[#3a3b42] max-w-55 mx-auto mt-7 cursor-pointer "
           style={{
             boxShadow:
@@ -254,6 +258,7 @@ function SecureServices({ sectionRef }: { sectionRef?: React.RefObject<HTMLDivEl
 }
 
 function HeroHeader() {
+  const { openModal } = useContactModal();
   return (
     <div className="relative isolate overflow-hidden bg-gray-50 pb-60 pt-[calc(theme(spacing.16)+theme(spacing.20))] sm:-mt-[10px] sm:pb-101 sm:pt-[calc(theme(spacing.16)+theme(spacing.32))] select-none">
 
@@ -421,7 +426,7 @@ function HeroHeader() {
         <div className="text-center mx-auto w-full px-6 -mt-2 max-h-[100px]  lg:max-h-[180px] md:max-h-[180px] sd:max-h-[120px] sm:max-w-[60rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
 
           <h1 className="mx-auto max-w-[22ch] text-balance font-bold tracking-tight text-[#131316] text-[1.5rem] leading-[1.9rem] sm:max-w-4xl sm:text-[2.5rem] sm:leading-[2.5rem] lg:text-[3.6rem] lg:leading-[3.5rem] lg:tracking-[-0.035em]">
-              Desarrollo de Software y Aplicaciones para Empresas
+            Desarrollo de Software y Aplicaciones para Empresas
           </h1>
 
           <p className="mt-4 mx-auto max-w-[32ch] text-[0.875rem] leading-6 text-gray-700 sm:hidden">
@@ -433,7 +438,7 @@ function HeroHeader() {
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-x-6 gap-y-3 max-sm:flex-col">
-            <button className="btn-purple text-[13px] sm:text-[14px] cursor-pointer tracking-[0.1px] group" type="button">
+            <button className="btn-purple text-[13px] sm:text-[13px] cursor-pointer tracking-[0.1px] group" type="button" onClick={openModal}>
               Ponerse en contacto
               <div className="group relative isolate inline-flex items-center justify-center overflow-hidden text-[12px] transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)] text-white">
                 <svg
@@ -469,7 +474,7 @@ function HeroHeader() {
           </div>
         </div>
       </div>
-      
+
     </div>
   )
 }
@@ -506,8 +511,12 @@ export default function App() {
 
   return (
     <>
+      {/* Envolvemos la aplicación con el proveedor del modal */}
+      <ContactModalProvider>
+        {/* El modal ahora vive aquí y es controlado por el contexto */}
+        <ContactModal />
 
-      <style>{`
+        <style>{`
       @keyframes spin {
         from {
           transform: rotate(0deg);
@@ -644,23 +653,25 @@ export default function App() {
 
       `}</style>
 
-      <OfferBar />
+        <OfferBar />
 
-      <Navbar />
+        <Navbar />
 
-      <HeroHeader />
+        <HeroHeader />
 
-      <FeaturesGrid />
+        <FeaturesGrid />
 
-      <PreviewServices />
+        <PreviewServices />
 
-      <SecureServices sectionRef={secureServicesRef} />
+        <SecureServices sectionRef={secureServicesRef} />
 
-      <Offers />
+        <Offers />
 
-      <FAQs />
+        <FAQs />
 
-      <Footer />
+        <Footer />
+
+      </ContactModalProvider>
 
     </>
   );

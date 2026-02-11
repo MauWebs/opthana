@@ -157,7 +157,9 @@ function FeaturesModal({ activeFeature, setActiveFeature, features }: { activeFe
 
               {/* FOOTER */}
               <div className="border-t border-[#e4e4e7] px-5  bg-[#F7F7F7] rounded-b-xl py-3">
-                <button
+                <a
+                  href="#offers"
+                  onClick={() => setActiveFeature(null)}
                   className="group relative flex h-8 w-full items-center justify-center overflow-hidden rounded-md text-[13px] text-white cursor-pointer transition-all duration-150 hover:bg-[#3a3b42]"
                   style={{
                     boxShadow:
@@ -165,9 +167,9 @@ function FeaturesModal({ activeFeature, setActiveFeature, features }: { activeFe
                     backgroundColor: "rgb(47,48,55)",
                   }}
                 >
-                  Solicitar Ahora
+                  Ver ofertas
                   <div className="group relative isolate inline-flex items-center justify-center overflow-hidden text-[12px] transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)] text-white"><svg viewBox="0 0 10 10" aria-hidden="true" className="ml-2 h-2.5 w-2.5 flex-none opacity-60 pointer-events-none group-hover:translate-x-6 group-hover:opacity-0 transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)]"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7.25 5-3.5-2.25v4.5L7.25 5Z"></path></svg><svg viewBox="0 0 10 10" aria-hidden="true" className="-ml-2.5 h-2.5 w-2.5 flex-none pointer-events-none -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)]"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7.25 5-3.5-2.25v4.5L7.25 5Z"></path></svg></div>
-                </button>
+                </a>
               </div>
             </div>
 

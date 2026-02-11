@@ -66,6 +66,7 @@ export default function PlansUI() {
         <div className="flex items-center gap-1.5 px-5 py-4 text-[10px] leading-[13px] text-gray-500">Opthana Tech</div>
       </div>
 
+      {/* Content */}
       <div className="rounded-lg bg-white">
 
         <div className="flex flex-1 items-center gap-2 bg-white px-6 pl-3 pt-5  rounded-r-[20px]">
@@ -158,9 +159,9 @@ export default function PlansUI() {
         shadow-[0_0_0_0.82px_rgba(0,0,0,0.06),0_0_1.64px_rgba(0,0,0,0.08),0_0.82px_1.64px_rgba(0,0,0,0.06)]
         transition-all duration-200
       "
-   style={{
-  transform: isYearly ? 'translateX(8px)' : 'translateX(1px)',
-}}
+                      style={{
+                        transform: isYearly ? 'translateX(8px)' : 'translateX(1px)',
+                      }}
                     />
                   </button>
 

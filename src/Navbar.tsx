@@ -1,3 +1,5 @@
+import { useContactModal } from "./ContactModalContext";
+
 const blurLayers = [
   { blur: 1, end: 100 },
   { blur: 1, end: 95 },
@@ -14,7 +16,7 @@ const blurLayers = [
 ];
 
 export default function Navbar() {
-
+  const { openModal } = useContactModal();
   return (
     <>
       <header
@@ -130,6 +132,7 @@ export default function Navbar() {
                 <div className="ml-auto hidden md:flex items-center">
                   <button
                     type="button"
+                    onClick={openModal}
                     className="
       group relative isolate inline-flex items-center overflow-hidden
       rounded-md px-2.5 h-[1.625rem] 
