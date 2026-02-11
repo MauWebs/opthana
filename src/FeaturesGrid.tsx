@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import BillingUI from "./ui/BillingUI";
 import SalesLandingUI from "./ui/SalesWebsitesUI";
 import SystemsForCompaniesUI from "./ui/SystemsForCompaniesUI";
+import PlansUI from "./ui/PlansUI";
 
 function FeaturesModal({ activeFeature, setActiveFeature, features }: { activeFeature: number | null, setActiveFeature: (index: number | null) => void, features: any[] }) {
   const feature = activeFeature !== null ? features[activeFeature] : null;
@@ -189,7 +190,7 @@ export default function FeaturesGrid() {
   };
 
   const cardClass =
-    "flex flex-col items-start gap-2 bg-white p-8 text-left lg:px-9 lg:py-10";
+    "flex flex-col items-start gap-2 p-8 text-left lg:px-9 lg:py-10";
 
   const FEATURES = [
     {
@@ -414,9 +415,7 @@ export default function FeaturesGrid() {
             </li>
           </ul>
 
-          <div className="my-6 bg-gray-100 border border-gray-200 h-48 rounded-lg flex items-center justify-center text-gray-500 text-[13px]">
-            [Futura imagen: App funcionando con suscripciones]
-          </div>
+          <PlansUI />
 
           <p>
             Convertimos ideas en productos digitales listos para salir al mercado y
@@ -429,17 +428,17 @@ export default function FeaturesGrid() {
 
   return (
     <div
-      className="relative bg-white"
+      className="relative"
       style={{ boxShadow: "0 -6px 12px -8px rgb(0 0 0 / 0.10)" }}
     >
-      <div className="border-b border-[#131316]/5">
+      <div className="border-b border-[#131316]/5" style={{ backgroundColor: "#FBFBFB" }}>
         <div className="sm:flex mx-auto w-full px-0 sm:px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-0 lg:max-w-[64rem] xl:max-w-[80rem]">
           <div
             className="grid grid-cols-1 gap-px text-[13px] sm:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-none sm:rounded-xl"
             style={gridWrapperStyle}
           >
             {FEATURES.map((feature, index) => (
-              <div key={index} className={cardClass}>
+              <div key={index} className={cardClass} style={{ backgroundColor: "#FBFBFB" }}>
                 <h3 className="mt-2 leading-4 text-[17.5px] suisse-600 tracking-[0.01em] text-[#030712]/80">
                   {feature.title}
                 </h3>

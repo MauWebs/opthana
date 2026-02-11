@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import OfferBar from "./OfferBar";
-import Services from "./Services";
 import FAQs from "./FAQs";
 import Footer from "./Footer";
 import Offers from "./Offers";
 import FeaturesGrid from "./FeaturesGrid";
+import PreviewServices from "./PreviewServices";
 
 function FeaturesAnimated() {
   return (
@@ -416,18 +416,24 @@ function HeroHeader() {
         </defs>
       </svg>
 
-      <div className="absolute inset-0 flex items-center justify-center z-30">
-        <div className="text-center mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem] mt-[63px]">
-          <h1 className="mx-auto max-w-4xl text-balance font-bold tracking-tight text-[#131316] text-[25px] sm:leading-[2.5rem] sm:text-[40px] lg:text-[3.8rem] lg:leading-[3.5rem] text-base/6 lg:tracking-[-0.035em]">
-            Desarrollo de Software y Aplicaciones para Empresas
+      <div className="lg:absolute md:absolute sm:absolute inset-0 flex items-center justify-center z-30">
+
+        <div className="text-center mx-auto w-full px-6 -mt-2 max-h-[100px]  lg:max-h-[180px] md:max-h-[180px] sd:max-h-[120px] sm:max-w-[60rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
+
+          <h1 className="mx-auto max-w-[22ch] text-balance font-bold tracking-tight text-[#131316] text-[1.5rem] leading-[1.9rem] sm:max-w-4xl sm:text-[2.5rem] sm:leading-[2.5rem] lg:text-[3.6rem] lg:leading-[3.5rem] lg:tracking-[-0.035em]">
+              Desarrollo de Software y Aplicaciones para Empresas
           </h1>
-          <p className="mx-auto mt-4 max-w-md text-pretty text-gray-600 sm:max-w-[800px] text-base text-[14px] sm:text-[17.5px] text-base/5">
-            Desarrollamos soluciones digitales a medida, desde sitios web de alto rendimiento hasta plataformas y sistemas pensadas para empresas que
-            necesitan más ventas y control.
+
+          <p className="mt-4 mx-auto max-w-[32ch] text-[0.875rem] leading-6 text-gray-700 sm:hidden">
+            Soluciones digitales a medida para empresas que necesitan vender más y tener control.
+          </p>
+
+          <p className="mt-5 mx-auto hidden sm:block max-w-xl text-[0.95rem] leading-6 text-gray-700 lg:text-[16px] lg:max-w-[800px]">
+            Desarrollamos soluciones digitales a medida, desde sitios web de alto rendimiento hasta plataformas pensadas para empresas que necesitan más ventas y control.
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-x-6 gap-y-3 max-sm:flex-col">
-            <button className="btn-purple text-[13px] cursor-pointer tracking-[0.1px] group" type="button">
+            <button className="btn-purple text-[13px] sm:text-[14px] cursor-pointer tracking-[0.1px] group" type="button">
               Ponerse en contacto
               <div className="group relative isolate inline-flex items-center justify-center overflow-hidden text-[12px] transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)] text-white">
                 <svg
@@ -463,6 +469,7 @@ function HeroHeader() {
           </div>
         </div>
       </div>
+      
     </div>
   )
 }
@@ -645,7 +652,7 @@ export default function App() {
 
       <FeaturesGrid />
 
-      <Services />
+      <PreviewServices />
 
       <SecureServices sectionRef={secureServicesRef} />
 

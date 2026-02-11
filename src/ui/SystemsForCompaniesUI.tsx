@@ -18,10 +18,10 @@ export default function SystemsForCompaniesUI() {
         <div>
           <div className="px-5 py-4">
             <h2 className="text-base font-bold text-[#131316]/90">
-              Configuración
+              Dasboard
             </h2>
             <p className="text-[12px] text-gray-500">
-              Gestiona tu cuenta
+              Empresarial
             </p>
           </div>
 
@@ -67,13 +67,13 @@ export default function SystemsForCompaniesUI() {
             ].map(([label, count, active], i) => (
               <div
                 key={i}
-                className={`flex items-center gap-1.5 pb-1 text-[11.5px] ${active
+                className={`cursor-pointer flex items-center gap-1.5 pb-1 text-[11.5px] ${active
                   ? "border-b border-gray-950 text-gray-950/90"
                   : "text-gray-500"
                   }`}
               >
                 {label}
-                <span className="rounded bg-gray-50  text-[9px] shadow-[0_0_0_1px_#EEE] px-[6px] py-[2px]">
+                <span className="rounded bg-gray-50  text-[9px] shadow-[0_0_0_1px_#EEE] px-[6.5px] py-[1px]">
                   {count}
                 </span>
               </div>
@@ -81,7 +81,7 @@ export default function SystemsForCompaniesUI() {
           </div>
 
           {/* Automatic invitations (inline, como la imagen) */}
-          <div className="mt-5 flex gap-2 border-b border-gray-200 pb-5">
+          <div className="mt-5 flex gap-2 border-b border-gray-200 pb-5 cursor-pointer">
             <div className="flex h-6.5 w-6.5 -mt-[3.2px]">
               <img src="/icons/plus.svg" />
             </div>
@@ -99,7 +99,7 @@ export default function SystemsForCompaniesUI() {
 
           <div className="mt-4 flex items-center justify-between">
             <a
-              className="pointer-events-auto inline-flex items-center gap-[6px] cursor-default"
+              className="cursor-default inline-flex items-center gap-[6px]"
               style={{
                 background: "#FFFFFF",
                 border: "1px solid rgba(0, 0, 0, 0.11)",
@@ -109,7 +109,7 @@ export default function SystemsForCompaniesUI() {
                 paddingRight: "90px",
                 borderRadius: "6px",
                 textDecoration: "none",
-                userSelect: "none",
+                letterSpacing: "0.02em",
               }}
             >
               <svg
@@ -177,12 +177,13 @@ export default function SystemsForCompaniesUI() {
                 {/* Rol */}
         
       <div
-      className="text-[11.5px] text-gray-700"
+      className="text-[11.5px] text-gray-700 cursor-pointer"
   style={{
     display: "inline-flex",
     alignItems: "center",
     gap: "2px",
     height: "20px",
+    width: "62px",
     padding: "2px",
     borderRadius: "6px",
     boxShadow:
@@ -226,6 +227,7 @@ export default function SystemsForCompaniesUI() {
             <div className="flex items-center gap-2">
               Resultados por página:
        <div
+        className="cursor-pointer"
   style={{
     display: "inline-flex",
     alignItems: "center",
