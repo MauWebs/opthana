@@ -1,4 +1,4 @@
-export default function SystemsForCompaniesUI() {
+export default function SystemsForCompaniesUI({ showShine = true }: { showShine?: boolean }) {
   return (
     <div
       className="relative my-6 flex overflow-hidden rounded-lg bg-[#F7F7F8] text-[13px] text-gray-500 select-none"
@@ -8,10 +8,12 @@ export default function SystemsForCompaniesUI() {
       }}
     >
       {/* Shine */}
-      <div
-        className="pointer-events-none absolute -top-1/4 left-0 z-10 h-[150%] w-full bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.8)] to-transparent blur-xl"
-        style={{ animation: "shine 9s ease infinite" }}
-      />
+      {showShine && (
+        <div
+          className="pointer-events-none absolute -top-1/4 left-0 z-10 h-[150%] w-full bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.8)] to-transparent blur-xl"
+          style={{ animation: "shine 9s ease infinite" }}
+        />
+      )}
 
       {/* Sidebar */}
       <div className="flex w-[11.25rem] flex-col justify-between border-r border-gray-200">

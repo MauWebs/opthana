@@ -1,17 +1,16 @@
-export default function BillingUI() {
+export default function BillingUI({ shadowBorder = true, border = false, removeMarginBottom = false, showShine = true }: { shadowBorder?: boolean; border?: boolean; removeMarginBottom?: boolean; showShine?: boolean }) {
   return (
-    <div
-      className="relative my-6 flex overflow-hidden rounded-lg bg-[#F7F7F8] text-[13px] text-gray-500 select-none"
-      style={{
-        boxShadow:
-          "0 0 0 1px rgba(0,0,0,0.06), 0 0.82px 1.64px 0 rgba(0,0,0,0.06), 0 0 1.64px rgba(0,0,0,0.08), 0 16px 36px -6px rgba(0,0,0,0.12), 0 8px 16px -3px rgba(0,0,0,0.01)",
-      }}
-    >
+     <div className={`relative overflow-hidden flex flex-1 flex-row rounded-lg h-[20rem] bg-[#F7F7F8] ${!removeMarginBottom ? "mb-[16px]" : ""} ${border ? "border border-gray-200" : ""}`} style={{
+      boxShadow: shadowBorder ?
+        "0 0 0 1px rgba(0,0,0,0.06), 0 0.82px 1.64px 0 rgba(0,0,0,0.06), 0 0 1.64px rgba(0,0,0,0.08), 0 16px 36px -6px rgba(0,0,0,0.12), 0 8px 16px -3px rgba(0,0,0,0.01)" : undefined,
+    }}>
       {/* Shine */}
-      <div
-        className="pointer-events-none absolute -top-1/4 left-0 z-10 h-[150%] w-full bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.8)] to-transparent blur-xl"
-        style={{ animation: "shine 9s ease infinite" }}
-      />
+      {showShine && (
+        <div
+          className="pointer-events-none absolute -top-1/4 left-0 z-10 h-[150%] w-full bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.8)] to-transparent blur-xl"
+          style={{ animation: "shine 9s ease infinite" }}
+        />
+      )}
 
       {/* Left Sidebar */}
       <div className="flex w-[11.25rem] flex-col justify-between border-r border-gray-200">

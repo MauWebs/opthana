@@ -1,4 +1,4 @@
-export default function SalesWebsitesUI() {
+export default function SalesWebsitesUI({ showShine = true }: { showShine?: boolean }) {
   return (
     <div
       className="relative my-6 overflow-hidden rounded-lg bg-[#F7F7F8] text-[13px] text-gray-600"
@@ -8,10 +8,12 @@ export default function SalesWebsitesUI() {
       }}
     >
       {/* Shine */}
-      <div
-        className="pointer-events-none absolute -top-1/4 left-0 z-10 h-[150%] w-full bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.75)] to-transparent blur-xl"
-        style={{ animation: "shine 10s ease infinite" }}
-      />
+      {showShine && (
+        <div
+          className="pointer-events-none absolute -top-1/4 left-0 z-10 h-[150%] w-full bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.75)] to-transparent blur-xl"
+          style={{ animation: "shine 10s ease infinite" }}
+        />
+      )}
 
       <div className="relative flex items-center border-b border-black/8 px-3 py-3.5">
         {/* Dots tipo Safari (izquierda) */}
