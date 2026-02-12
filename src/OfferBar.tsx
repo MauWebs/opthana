@@ -3,7 +3,7 @@ export default function OfferBar() {
     <>
       <a
         href="#offers"
-        className="sticky top-0 isolate group absolute top-0 z-1000 mt-0 flex w-full gap-x-4 whitespace-nowrap bg-[#131316] py-2 text-[12px] mb-1 text-white outline-none cursor-pointer [&_div]:cursor-[inherit] [&_svg]:cursor-[inherit]  tracking-[.4px] bg-overlay"
+        className="sticky isolate group absolute -top-[1px] z-1000 flex w-full gap-x-4 whitespace-nowrap bg-[#131316] py-2 text-[12px] mb-1 text-white outline-none cursor-pointer [&_div]:cursor-[inherit] [&_svg]:cursor-[inherit]  tracking-[.4px] bg-overlay"
       >
         {/* LEFT SKEW */}
         <div

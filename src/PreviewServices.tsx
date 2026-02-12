@@ -132,7 +132,7 @@ export default function PreviewServices() {
             Nuestro Servicios
           </h2>
 
-          <p className="mt-8 mx-auto max-w-[700px] text-3xl suisse-600 tracking-[-0.015em] text-gray-950">
+          <p className="mt-8 mx-auto max-w-[22ch] text-balance font-bold tracking-tight text-[#131316] text-[1.5rem] leading-[1.9rem] sm:max-w-4xl sm:text-[2.5rem] sm:leading-[2.5rem] lg:text-[38px] lg:leading-[2.6rem] lg:tracking-[-0.035em]">
             Nos enfocamos en el desarrollo de sistemas y plataformas para empresas y emprendimientos
           </p>
 
@@ -480,4 +480,5 @@ export default function PreviewServices() {
 
     </section>
   )
+  
 }

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useContactModal } from "./ContactModalContext";
 
 export default function FAQs() {
-
+  const { openModal } = useContactModal();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const FAQ_DATA = [
@@ -36,21 +37,21 @@ export default function FAQs() {
     `
     },
     {
+      question: "¿Ofrecen soporte y mantenimiento continuo?",
+      answer: `
+      <p>
+        Sí, brindamos soporte técnico, mantenimiento, actualizaciones y mejoras posteriores al lanzamiento
+        para asegurar el correcto funcionamiento del sistema mediante un ( **soporte continuo** ) del desarrollo.
+      </p>
+    `
+    },
+    {
       question: "¿Cuánto tiempo tarda el desarrollo del proyecto?",
       answer: `
       <p>
         El tiempo estimado de desarrollo es de hasta 1 mes, dependiendo de la complejidad y el tipo de proyecto.
         Sitios web simples pueden estar listos en menos tiempo, mientras que plataformas o aplicaciones
         requieren más etapas de trabajo y validación, con un plazo máximo de ( **hasta 1 mes** ) aproximadamente.
-      </p>
-    `
-    },
-    {
-      question: "¿Ofrecen soporte y mantenimiento luego del lanzamiento?",
-      answer: `
-      <p>
-        Sí, brindamos soporte técnico, mantenimiento, actualizaciones y mejoras posteriores al lanzamiento
-        para asegurar el correcto funcionamiento del sistema mediante un ( **soporte continuo** ) del desarrollo.
       </p>
     `
     }
@@ -83,7 +84,7 @@ export default function FAQs() {
             Respuestas rápidas a preguntas comunes sobre nuestros servicios de desarrollo web y móvil.
             Si tienes otra duda,{' '}
             <a
-              href="/contact/support"
+              onClick={openModal}
               className="underline decoration-[#D9D9DE] text-[#5e5f6e] decoration-2 underline-offset-[0.25em] transition-colors hover:text-[#131316] hover:decoration-[#131316]"
             >
               contáctanos

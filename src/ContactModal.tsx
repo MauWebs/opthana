@@ -5,9 +5,9 @@ export default function ContactModal() {
   const { isOpen, closeModal } = useContactModal();
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
+    contact_name: "",
+    contact_email: "",
+    contact_message: ""
   });
 
   const [submittedData, setSubmittedData] = useState<{
@@ -15,9 +15,9 @@ export default function ContactModal() {
     email: string;
   } | null>(null);
   const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    message: false
+    contact_name: false,
+    contact_email: false,
+    contact_message: false
   });
 
   const [isSuccess, setIsSuccess] = useState(false);
@@ -35,9 +35,9 @@ export default function ContactModal() {
   const handleSubmit = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const newErrors = {
-      name: !formData.name.trim(),
-      email: !formData.email.trim() || !emailRegex.test(formData.email.trim()),
-      message: !formData.message.trim()
+      contact_name: !formData.contact_name.trim(),
+      contact_email: !formData.contact_email.trim() || !emailRegex.test(formData.contact_email.trim()),
+      contact_message: !formData.contact_message.trim()
     };
     setErrors(newErrors);
 
@@ -50,9 +50,9 @@ export default function ContactModal() {
         const formattedDate = `Se añadió el día ${now.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} a las ${now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: false })}`;
 
         const params = new URLSearchParams();
-        params.append("Nombre", formData.name);
-        params.append("Email", formData.email);
-        params.append("Mensaje", formData.message);
+        params.append("Nombre", formData.contact_name);
+        params.append("Email", formData.contact_email);
+        params.append("Mensaje", formData.contact_message);
         params.append("Fecha", formattedDate);
 
         await fetch(url, {
@@ -62,11 +62,11 @@ export default function ContactModal() {
         });
 
         setSubmittedData({
-          name: formData.name,
-          email: formData.email,
+          name: formData.contact_name,
+          email: formData.contact_email,
         });
         setIsSuccess(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ contact_name: "", contact_email: "", contact_message: "" });
       } catch (error) {
         console.error(error);
       } finally {
@@ -82,14 +82,14 @@ export default function ContactModal() {
     } else {
       document.body.style.overflow = ""
       setFormData({
-        name: "",
-        email: "",
-        message: ""
+        contact_name: "",
+        contact_email: "",
+        contact_message: ""
       });
       setErrors({
-        name: false,
-        email: false,
-        message: false
+        contact_name: false,
+        contact_email: false,
+        contact_message: false
       });
       setSubmittedData(null); // Clear submittedData when modal closes
     }
@@ -254,51 +254,62 @@ export default function ContactModal() {
                 <div className="flex flex-col gap-2">
                   <label className="text-[12px]">Nombre completo</label>
                   <input
-                    name="name"
-                    autoComplete="off"
-                    value={formData.name}
+                    name="contact_name"
+                    autoComplete="new-password"
+                    autoCorrect="off"
+                    spellCheck="false"
+                    autoCapitalize="off"
+                    data-lpignore="true"
+                    value={formData.contact_name}
                     onChange={handleChange}
                     className="h-8 w-full rounded-md px-3 text-[13px] transition-colors duration-200 bg-white placeholder:text-[#5E5F6E] outline-none focus:bg-[#F3F4F6]"
-                    style={{ boxShadow: errors.name ? "0 0 0 1px #ef4444" : "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px" }}
+                    style={{ boxShadow: errors.contact_name ? "0 0 0 1px #ef4444" : "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px" }}
                     placeholder="Ingresa tu nombre"
                   />
-                  {errors.name && <span className="flex items-start gap-x-1"><svg viewBox="0 0 16 18" fill="none" className="w-4 flex-none fill-[#ef4444] dark:fill-[#ef4444]" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M8.866 4.012a.988.988 0 0 0-1.732 0L2.13 13.004c-.372.67.106 1.496.866 1.496h10.01c.76 0 1.238-.827.866-1.496L8.866 4.012Zm-1.66 5.74a.798.798 0 0 0 1.593 0l.14-2.254a.94.94 0 1 0-1.875 0l.141 2.253Zm.046 2.498a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg><span className="text-[12px] text-[#ef4444]">Completa este campo</span></span>}
+                  {errors.contact_name && <span className="flex items-start gap-x-1"><svg viewBox="0 0 16 18" fill="none" className="w-4 flex-none fill-[#ef4444]" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M8.866 4.012a.988.988 0 0 0-1.732 0L2.13 13.004c-.372.67.106 1.496.866 1.496h10.01c.76 0 1.238-.827.866-1.496L8.866 4.012Zm-1.66 5.74a.798.798 0 0 0 1.593 0l.14-2.254a.94.94 0 1 0-1.875 0l.141 2.253Zm.046 2.498a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg><span className="text-[12px] text-[#ef4444]">Completa este campo</span></span>}
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="text-[12px]">Correo electrónico</label>
                   <input
-                    name="email"
-                    autoComplete="off"
-                    value={formData.email}
+                    name="contact_email"
+                    autoComplete="new-password"
+                    autoCorrect="off"
+                    spellCheck="false"
+                    autoCapitalize="off"
+                    data-lpignore="true"
+                    value={formData.contact_email}
                     onChange={handleChange}
                     className="h-8 w-full rounded-md px-3 text-[13px] transition-colors duration-200 bg-white placeholder:text-[#5E5F6E] outline-none focus:bg-[#F3F4F6]"
-                    style={{ boxShadow: errors.email ? "0 0 0 1px #ef4444" : "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px" }}
-                    placeholder="correo@hotmail.com"
+                    style={{ boxShadow: errors.contact_email ? "0 0 0 1px #ef4444" : "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px" }}
+                    placeholder="Ingresa tu correo electrónico"
                   />
-                  {errors.email && <span className="flex items-start gap-x-1"><svg viewBox="0 0 16 18" fill="none" className="w-4 flex-none fill-[#ef4444] dark:fill-[#ef4444]" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M8.866 4.012a.988.988 0 0 0-1.732 0L2.13 13.004c-.372.67.106 1.496.866 1.496h10.01c.76 0 1.238-.827.866-1.496L8.866 4.012Zm-1.66 5.74a.798.798 0 0 0 1.593 0l.14-2.254a.94.94 0 1 0-1.875 0l.141 2.253Zm.046 2.498a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg><span className="text-[12px] text-[#ef4444]">{!formData.email.trim() ? "Completa este campo" : "Ingresa un correo válido"}</span></span>}
+                  {errors.contact_email && <span className="flex items-start gap-x-1"><svg viewBox="0 0 16 18" fill="none" className="w-4 flex-none fill-[#ef4444]" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M8.866 4.012a.988.988 0 0 0-1.732 0L2.13 13.004c-.372.67.106 1.496.866 1.496h10.01c.76 0 1.238-.827.866-1.496L8.866 4.012Zm-1.66 5.74a.798.798 0 0 0 1.593 0l.14-2.254a.94.94 0 1 0-1.875 0l.141 2.253Zm.046 2.498a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg><span className="text-[12px] text-[#ef4444]">{!formData.contact_email.trim() ? "Completa este campo" : "Ingresa un correo válido"}</span></span>}
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="text-[12px]">Como podemos ayduarte?</label>
                   <textarea
-                    name="message"
+                    name="contact_message"
                     autoComplete="off"
-                    value={formData.message}
+                    autoCorrect="off"
+                    spellCheck="false"
+                    autoCapitalize="off"
+                    value={formData.contact_message}
                     onChange={handleChange}
                     className="w-full rounded-md p-3 text-[13px] transition-colors duration-200 bg-white placeholder:text-[#5E5F6E] outline-none resize-none min-h-[80px] focus:bg-[#F3F4F6]"
                     style={{
-                      boxShadow: errors.message ? "0 0 0 1px #ef4444" :
+                      boxShadow: errors.contact_message ? "0 0 0 1px #ef4444" :
                         "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px",
                     }}
-                    placeholder="Escribe brevemente lo que necesitas…"
+                    placeholder="Escribe brevemente lo que necesitas"
                     onInput={(e) => {
                       const target = e.currentTarget
                       target.style.height = "auto"
                       target.style.height = `${target.scrollHeight}px`
                     }}
                   />
-                  {errors.message && <span className="flex items-start gap-x-1"><svg viewBox="0 0 16 18" fill="none" className="w-4 flex-none fill-[#ef4444] dark:fill-[#ef4444]" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M8.866 4.012a.988.988 0 0 0-1.732 0L2.13 13.004c-.372.67.106 1.496.866 1.496h10.01c.76 0 1.238-.827.866-1.496L8.866 4.012Zm-1.66 5.74a.798.798 0 0 0 1.593 0l.14-2.254a.94.94 0 1 0-1.875 0l.141 2.253Zm.046 2.498a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg><span className="text-[12px] text-[#ef4444]">Completa este campo</span></span>}
+                  {errors.contact_message && <span className="flex items-start gap-x-1"><svg viewBox="0 0 16 18" fill="none" className="w-4 flex-none fill-[#ef4444]" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M8.866 4.012a.988.988 0 0 0-1.732 0L2.13 13.004c-.372.67.106 1.496.866 1.496h10.01c.76 0 1.238-.827.866-1.496L8.866 4.012Zm-1.66 5.74a.798.798 0 0 0 1.593 0l.14-2.254a.94.94 0 1 0-1.875 0l.141 2.253Zm.046 2.498a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg><span className="text-[12px] text-[#ef4444]">Completa este campo</span></span>}
                 </div>
 
                 <button

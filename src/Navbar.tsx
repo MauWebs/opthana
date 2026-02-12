@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useContactModal } from "./ContactModalContext";
 
 const blurLayers = [
@@ -16,7 +17,8 @@ const blurLayers = [
 ];
 
 export default function Navbar() {
-  const { openModal } = useContactModal();
+  const { openModal } = useContactModal(); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       <header
@@ -27,7 +29,7 @@ export default function Navbar() {
         <div className="header-background relative z-100 w-full h-full">
           {/* Capas de blur */}
           <div
-            className="pointer-events-none absolute inset-0 top-[-0.5rem] -z-10"
+            className="pointer-events-none absolute inset-0 top-[-0.5rem] -z-10 hidden md:block"
             style={{ height: "6rem", "--mask-opacity": 1 } as React.CSSProperties}
           >
             <div className="" style={{ position: "relative", width: "100%", height: "100%" }}>
@@ -50,7 +52,12 @@ export default function Navbar() {
           {/* Contenido del Navbar */}
           <div className="transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow,background] duration-[450ms] ease-[cubic-bezier(0.33,1,0.68,1)] hover:duration-200 m-auto w-[76.75rem] max-w-[calc(100vw-1rem)] rounded-[.75rem] md:max-w-[calc(100vw-2rem)]">
 
-            <div className="transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow,background] duration-[450ms] ease-[cubic-bezier(0.33,1,0.68,1)] hover:duration-200 pointer-events-auto relative z-30 mx-auto flex h-fit w-full items-center rounded-xl bg-[rgba(248,248,248,0.9)] px-2 py-0 pl-3 pr-0 [box-shadow:0_0_0_0.5px_rgba(255,255,255,0.9)_inset,0_0_0_0.5px_rgba(19,19,22,0.15),0_2px_3px_0_rgba(0,0,0,0.04),0_4px_6px_0_rgba(34,42,53,0.04),0_1px_1px_0_rgba(0,0,0,0.05)] md:py-2 md:pr-2 [@media(width<22.5rem)]:h-[2.626rem]">
+            <div className="transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow,background] duration-[450ms] ease-[cubic-bezier(0.33,1,0.68,1)] hover:duration-200 pointer-events-auto relative z-30 mx-auto flex h-fit w-full items-center rounded-xl bg-[#F8F8F8] py-[5px] md:bg-[rgba(248,248,248,0.9)] px-2 py-0 pl-3 pr-0 [box-shadow:0_0_0_0.5px_rgba(255,255,255,0.9)_inset,0_0_0_0.5px_rgba(19,19,22,0.15),0_2px_3px_0_rgba(0,0,0,0.04),0_4px_6px_0_rgba(34,42,53,0.04),0_1px_1px_0_rgba(0,0,0,0.05)] md:py-2 md:pr-2 [@media(width<22.5rem)]:h-[2.626rem]"
+              style={{
+                boxShadow: "inset 0 0 0 .5px rgba(255,255,255,.9),0 0 0 .5px rgba(19,19,22,.15),0 2px 3px 0 rgba(0,0,0,.04),0 4px 6px 0 rgba(34,42,53,.04),0 1px 1px 0 rgba(0,0,0,.05)"
+
+              }}
+            >
 
               <a
                 aria-label="Opthana Home Page"
@@ -59,7 +66,7 @@ export default function Navbar() {
                 style={{ WebkitTouchCallout: "none" }}
               >
 
-                <svg width="108" height="26" viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
+                <svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-[108px] h-auto opacity-90">
                   <path d="M7.8699 40.1907L3.5592 35.9162L17.6037 21.8518H20.3848L34.4294 35.9162L30.1187 40.1907L22.0535 32.3312V43.5H15.9351V32.3312L7.8699 40.1907Z" fill="#2A2A2A" />
                   <path d="M0.5 16.0812V22.1482H8.84328L16.7694 14.1508H21.2192L29.1453 22.1482H37.7667V16.0812H26.5032L34.4294 8.22166L30.1187 3.80928L22.0535 11.6688V0.5H15.9351V11.6688L7.8699 3.80928L3.5592 8.08378L11.4853 16.0812H0.5Z" fill="#2A2A2A" />
                   <path d="M7.8699 40.1907L3.5592 35.9162L17.6037 21.8518H20.3848L34.4294 35.9162L30.1187 40.1907L22.0535 32.3312V43.5H15.9351V32.3312L7.8699 40.1907Z" stroke="#2A2A2A" />
@@ -72,33 +79,15 @@ export default function Navbar() {
                   className="hidden md:block h-[1.625rem] w-px bg-[#D6D6D6]/60 ml-3"
                 />
 
+
               </a>
+
+
 
               <nav aria-label="Main" className="ml-3 hidden md:block">
                 <div className="relative">
                   <ul className="group/nav flex items-center text-[12.5px] suisse tracking-[.4px]">
 
-                    {/* <li className="relative flex">
-                      <button
-
-                        className="flex items-center gap-x-2 px-2 py-1 group"
-                      >
-                        Servicios
-                        <span className="relative flex h-1 w-2 items-center justify-center">
-                          *<svg
-                            viewBox="0 0 8 4"
-                            fill="none"
-                            className={`absolute inset-0 h-full w-full transform-gpu transition-transform duration-200`}
-                          >
-                            <path
-                              d="M6.17574 0.175736C6.41005 -0.0585787 6.78908 -0.0585787 7.02339 0.175736C7.25771 0.410051 7.25771 0.789078 7.02339 1.02339L4.7314 3.31636C4.10656 3.9412 3.09257 3.9412 2.46773 3.31636L0.175736 1.02339C-0.0585787 0.789078 -0.0585787 0.410051 0.175736 0.175736C0.410051 -0.0585787 0.789078 -0.0585787 1.02339 0.175736L3.31636 2.46773C3.47257 2.62394 3.72656 2.62394 3.88277 2.46773L6.17574 0.175736Z"
-                              fill="currentColor"
-                            />
-                          </svg> 
-                        </span>
-                      </button>
-                    </li>
-                    */}
 
                     <li className="relative flex">
                       <a
@@ -126,9 +115,7 @@ export default function Navbar() {
                 </div>
               </nav>
 
-              {/* 👉 Botón derecha */}
               <div className="ml-auto hidden md:flex items-center">
-                {/* 👉 Botón derecha */}
                 <div className="ml-auto hidden md:flex items-center">
                   <button
                     type="button"
@@ -183,10 +170,101 @@ export default function Navbar() {
 
               </div>
 
+              <div className="ml-auto md:hidden flex items-center">
+
+                <button
+                  type="button"
+                  onClick={openModal}
+                  className="
+      group relative isolate inline-flex items-center overflow-hidden mr-1
+      rounded-md px-2.5 h-[1.625rem] 
+      shadow-[0_2px_3px_-1px_rgba(0,0,0,0.08),0_0_0_0.5px_rgba(19,19,22,0.18),0_1px_0_0_rgba(255,255,255,0.10)_inset]
+      [background:linear-gradient(180deg,rgba(19,19,22,0)_45%,rgba(19,19,22,0.03)_55%),#fff]
+      transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)]
+      text-[#131316] text-[12.5px] suisse tracking-[.4px]
+    "
+                >
+                  <span>Contactar</span>
+
+                  <svg
+                    viewBox="0 0 10 10"
+                    aria-hidden="true"
+                    className="ml-2 h-2.5 w-2.5 flex-none opacity-60
+                 group-hover:translate-x-6 group-hover:opacity-0
+                 transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)]"
+                  >
+                    <path
+                      fill="currentColor"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="m7.25 5-3.5-2.25v4.5L7.25 5Z"
+                    />
+                  </svg>
+
+                  <svg
+                    viewBox="0 0 10 10"
+                    aria-hidden="true"
+                    className="-ml-2.5 h-2.5 w-2.5 flex-none
+                 -translate-x-2 opacity-0
+                 group-hover:translate-x-0 group-hover:opacity-100
+                 transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)]"
+                  >
+                    <path
+                      fill="currentColor"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="m7.25 5-3.5-2.25v4.5L7.25 5Z"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="p-2 text-[#131316] focus:outline-none"
+                  aria-label="Toggle menu"
+                >
+                  {isMenuOpen ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className="size-4">
+                      <path stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" d="M4 4L12 12"></path>
+                      <path stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" d="M12 4L4 12"></path>
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className="size-4">
+                      <path stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" d="M4 4.667L12 4.667"></path>
+                      <path stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" d="M4 11.333L12 11.333"></path>
+                    </svg>
+                  )}
+                </button>
+              </div>
 
 
 
             </div>
+
+            {/* Mobile Menu Dropdown */}
+            {isMenuOpen && (
+              <div className="-mt-5 py-2.5 px-3 md:hidden transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow,background] duration-[450ms] ease-[cubic-bezier(0.33,1,0.68,1)] hover:duration-200 m-auto w-[76.75rem] max-w-[calc(100vw-1rem)] rounded-xl md:max-w-[calc(100vw-2rem)] bg-[rgba(243,243,244,0.90)] backdrop-blur-[5px] [box-shadow:0_-0.5px_0_0_rgba(255,255,255,0.8)_inset,0_0_0_0.5px_rgba(19,19,22,0.15),0_2px_3px_0_rgba(0,0,0,0.04),0_4px_6px_0_rgba(34,42,53,0.04),0_1px_1px_0_rgba(0,0,0,0.05)] cursor-default">
+                <ul className="flex flex-col gap-1 text-[13px] suisse tracking-[.4px] text-[#131316] cursor-default">
+                  <li>
+                    <div className="flex items-center rounded-md transition-colors mt-4 -mb-[3px] text-[11px] cursor-default">
+                      <a href="#services"  className="cursor-pointer flex items-center">
+                        Servicios
+                      </a>
+                      <a href="#offers"  className="cursor-pointer flex items-center ml-3">
+                        Ofertas
+                      </a>
+                      <a href="#faqs" className="cursor-pointer flex items-center ml-3">
+                        Preguntas
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            )}
 
           </div>
 

@@ -102,7 +102,8 @@ function FeaturesAnimated() {
         </div>
 
         <p className="group relative mt-10 max-w-200 text-2xl font-semibold text-[#fff] mx-auto">
-          Desarrollamos tu software con <strong>alta seguridad</strong> y <strong>hosting profesional</strong> para que tus clientes perciban tu <strong>credibilidad</strong> y <strong>profesionalismo</strong>.
+          <span className="sm:hidden">Desarrollamos tu software con alta seguridad, hosting y dominio profesional</span>
+          <span className="hidden sm:inline">Desarrollamos tu software con alta seguridad y hosting profesional para que tus clientes perciban tu credibilidad y profesionalismo.</span>
         </p>
 
         <p className="group relative mb-4 mt-3 max-w-145 text-[14px] text-[#9394a1] mx-auto">
