@@ -418,7 +418,7 @@ export default function PreviewServicesDesktop() {
             <button
               type="button"
               aria-label="Previous"
-              className="relative flex size-6 items-center justify-center rounded-full text-gray-600 ring-1 ring-inset ring-gray-200 transition hover:text-gray-600 hover:ring-gray-300"
+              className="relative flex size-6 items-center justify-center rounded-full text-gray-600 ring-1 ring-inset ring-gray-200 transition hover:text-gray-600 hover:ring-gray-300 hover:bg-white"
               onClick={() => goToSlide(currentIndex - 1)}
             >
               <svg viewBox="0 0 16 16" className="size-4">
@@ -435,7 +435,7 @@ export default function PreviewServicesDesktop() {
             <button
               type="button"
               aria-label="Next"
-              className="relative flex size-6 items-center justify-center rounded-full text-gray-600 ring-1 ring-inset ring-gray-200 transition hover:text-gray-600 hover:ring-gray-300"
+              className="relative flex size-6 items-center justify-center rounded-full text-gray-600 ring-1 ring-inset ring-gray-200 transition hover:text-gray-600 hover:ring-gray-300 hover:bg-white"
               onClick={() => goToSlide(currentIndex + 1)}
             >
               <svg viewBox="0 0 16 16" className="size-4">

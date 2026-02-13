@@ -3,7 +3,7 @@ import PreviewServicesDesktop from "./PreviewServicesDesktop";
 
 export default function PreviewServices() {
   return (
-    <section>
+    <section id="services">
       <div className="block lg:hidden w-full">
         <PreviewServicesMobile />
       </div>
