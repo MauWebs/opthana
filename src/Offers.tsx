@@ -48,10 +48,10 @@ const PRICING_PLANS = [
       "App para Android y iOS",
       "Notificaciones y avisos",
       "Aplicación móvil a medida",
-      "Diseño de interfaz intuitivo",
+      "Diseño de interfaz intuitiva",
       "Cuentas y perfiles de usuarios",
       "Plataforma con subscripciones",
-      "Registro de usaurios y sesiones",
+      "Registro de usuarios y sesiones",
       "Pasarelas de pago para clientes",
       "Gestión de contenido y publicaciones",
     ]
