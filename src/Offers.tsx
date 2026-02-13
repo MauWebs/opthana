@@ -29,7 +29,7 @@ const PRICING_PLANS = [
     features: [
       "Paneles de administración",
       "Sistema de usuarios y roles",
-      "Registro de usaurios y sesiones",
+      "Registro de usuarios y sesiones",
       "Bases de datos para tu empresa",
       "Modelos de suscripción y pagos",
       "Soporte técnico para tus clientes",
