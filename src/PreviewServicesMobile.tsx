@@ -67,7 +67,7 @@ export default function PreviewServicesMobile() {
 
   return (
     <section className="relative mt-20 lg:hidden overflow-hidden">
-      
+{/*       
         <img
         alt=""
         loading="lazy"
@@ -79,7 +79,7 @@ export default function PreviewServicesMobile() {
         style={{ color: "transparent" }}
         src="https://clerk.com/_next/static/media/components-blur@q80.4a052fd6.webp"
       />
-      
+       */}
 
       {/* Header */}
       <div className="px-6 text-center">

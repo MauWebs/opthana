@@ -101,7 +101,8 @@ export default function PreviewServicesDesktop() {
 
   return (
     <section className="relative isolate h-[1200px]">
-      <img
+      
+      {/* <img
         alt=""
         loading="lazy"
         width={2768}
@@ -111,7 +112,7 @@ export default function PreviewServicesDesktop() {
         className="absolute inset-0 -z-10 h-full w-full object-cover"
         style={{ color: "transparent" }}
         src="https://clerk.com/_next/static/media/components-blur@q80.4a052fd6.webp"
-      />
+      /> */}
 
       {/* Header / Textos */}
       <div className="mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem] pt-30">
