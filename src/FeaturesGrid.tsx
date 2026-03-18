@@ -24,7 +24,7 @@ function FeaturesModal({ activeFeature, setActiveFeature, features }: { activeFe
   return (
 
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center p-4 transition-all duration-300 ${activeFeature !== null ? "visible pointer-events-auto" : "invisible pointer-events-none delay-300"
+      className={`fixed inset-0 z-[9999] flex items-center justify-center p-4 transition-all duration-300  ${activeFeature !== null ? "visible pointer-events-auto" : "invisible pointer-events-none delay-300"
         }`}
     >
       <style>{`

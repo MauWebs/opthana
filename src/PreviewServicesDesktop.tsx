@@ -100,7 +100,7 @@ export default function PreviewServicesDesktop() {
   };
 
   return (
-    <section className="relative isolate h-[1200px]">
+    <section className="relative isolate h-[1200px] bg-[#F9FAFB]">
       
       {/* <img
         alt=""

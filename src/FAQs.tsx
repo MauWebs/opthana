@@ -58,9 +58,10 @@ export default function FAQs() {
   ];
 
   return (
-    <div id="faqs">
-      <div className="mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
-        <section className="relative mx-auto max-w-[63rem] sm:pb-20 sm:pt-10">
+<div className="w-full bg-[#F9FAFB] pb-16 md:pb-20 lg:pb-24">
+  <div className="mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
+    
+    <section className="relative mx-auto max-w-[63rem] sm:pb-20 sm:pt-10">
 
           <div
             className="absolute inset-y-0 right-full hidden w-px md:block"

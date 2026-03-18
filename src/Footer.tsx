@@ -2,10 +2,10 @@ import DotPattern from "./DotPattern";
 
 export default function Footer() {
   return (
-    <footer
-      className="relative mt-24 sm:mt-32 border-t border-white/10 bg-[#131316] pt-16 text-gray-300 bg-overlay"
-      id="footer"
-    >
+<footer
+  className="relative sm:pt-32 border-t border-white/10 bg-[#131316] pt-16 text-gray-300 bg-overlay"
+  id="footer"
+>
       {/* DECORACIÓN SUPERIOR */}
       <div className="absolute inset-x-0 -top-11.5 pointer-events-none">
         {/* CONTENIDO REAL */}

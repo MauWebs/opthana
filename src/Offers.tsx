@@ -63,7 +63,7 @@ export default function Offers() {
   const { openModal } = useContactModal();
 
   return (
-    <div id="offers" className="overflow-hidden">
+    <div id="offers" className="overflow-hidden bg-[#F9FAFB]">
       <div className="mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
         <div className="relative mx-auto max-w-[63rem] pb-20 pt-20 md:pt-24">
 
