@@ -41,8 +41,8 @@ const PRICING_PLANS = [
   {
     name: "Aplicaciones Móviles",
     description: "Apps para Android y iOS",
-    priceArg: "$ 850.000",
-    priceUsd: "$ 850",
+    priceArg: "$ 950.000",
+    priceUsd: "$ 950",
     ideal: "Si buscás fidelizar clientes o generar ventas mediante productos o soluciones",
     features: [
       "App para Android y iOS",
