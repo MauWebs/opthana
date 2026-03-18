@@ -23,8 +23,8 @@ const PRICING_PLANS = [
   {
     name: "Sistemas de Gestión Web",
     description: "Desarrollo de sistemas completos",
-    priceArg: "$ 550.000",
-    priceUsd: "$ 550",
+    priceArg: "$ 750.000",
+    priceUsd: "$ 750",
     ideal: "Si querés crear un producto digital y automatizar procesos en tu empresa",
     features: [
       "Paneles de administración",
