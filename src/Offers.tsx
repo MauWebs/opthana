@@ -5,8 +5,8 @@ const PRICING_PLANS = [
   {
     name: "Desarrollo de Sitios Webs",
     description: "Armado completo de páginas webs",
-    priceArg: "$ 129.000",
-    priceUsd: "$ 129",
+    priceArg: "$ 250.000",
+    priceUsd: "$ 250",
     ideal: "Si querés tener presencia online y captar clientes de manera profesional",
     features: [
       "Branding de tu empresa",
@@ -23,8 +23,8 @@ const PRICING_PLANS = [
   {
     name: "Sistemas de Gestión Web",
     description: "Desarrollo de sistemas completos",
-    priceArg: "$ 399.000",
-    priceUsd: "$ 399",
+    priceArg: "$ 550.000",
+    priceUsd: "$ 550",
     ideal: "Si querés crear un producto digital y automatizar procesos en tu empresa",
     features: [
       "Paneles de administración",
@@ -41,8 +41,8 @@ const PRICING_PLANS = [
   {
     name: "Aplicaciones Móviles",
     description: "Apps para Android y iOS",
-    priceArg: "$ 499.000",
-    priceUsd: "$ 499",
+    priceArg: "$ 850.000",
+    priceUsd: "$ 850",
     ideal: "Si buscás fidelizar clientes o generar ventas mediante productos o soluciones",
     features: [
       "App para Android y iOS",

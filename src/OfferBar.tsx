@@ -12,7 +12,7 @@ export default function OfferBar() {
         ></div>
 
         {/* TEXT */}
-        <div className="truncate">Desarrollamos tu web para vos por <span className="text-[10.5px]">$ 79.000</span> pesos argentinos</div>
+        <div className="truncate">Desarrollamos tu web para vos por <span className="text-[10.5px]">$ 250.000</span> pesos argentinos</div>
 
         {/* SEPARATOR */}
         <div className="my-[calc(3/16*1rem)] w-px flex-none bg-white/20"></div>
