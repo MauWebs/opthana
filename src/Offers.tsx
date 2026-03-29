@@ -95,7 +95,7 @@ export default function Offers() {
                 className="absolute -inset-y-px right-full -z-10 hidden bg-repeat-y sm:block"
                 style={{
                   backgroundImage:
-                    'url("https://clerk.com/_next/static/media/dither@l.566ce9b4.webp")',
+                    'url("/dither@l.7d540905.webp")',
                   backgroundSize: "100%",
                   backgroundPosition: "0px 1px",
                   width: "8.8125rem",
@@ -107,7 +107,7 @@ export default function Offers() {
                 className="absolute -inset-y-px left-full -z-10 hidden -scale-x-100 bg-repeat-y sm:block"
                 style={{
                   backgroundImage:
-                    'url("https://clerk.com/_next/static/media/dither@l.566ce9b4.webp")',
+                    'url("/dither@l.7d540905.webp")',
                   backgroundSize: "100%",
                   width: "8.8125rem",
                   imageRendering: "pixelated",
