@@ -66,7 +66,7 @@ export default function PreviewServicesMobile() {
   ];
 
   return (
-    <section className="relative pt-20 lg:hidden overflow-hidden bg-[#F9FAFB]">
+    <section className="relative pt-20 lg:hidden overflow-hidden bg-[#F9FAFB] text-[#42434D]">
 {/*       
         <img
         alt=""
