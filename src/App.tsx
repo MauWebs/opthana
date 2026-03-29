@@ -269,12 +269,8 @@ function HeroHeader() {
         <div className="absolute -top-8 right-1/2 sm:top-5 aspect-[969/887] w-[969px]">
           <picture>
             <source
-              srcSet="https://clerk.com/_next/static/media/circuit-lines@2xl.6eb893d2.webp"
+              srcSet="/circuit-lines@2xl.6eb893d2.webp"
               type="image/webp"
-            />
-            <source
-              srcSet="https://clerk.com/_next/static/media/circuit-lines@2xr.7a1a20ee.png"
-              type="image/png"
             />
             <img
               alt=""
@@ -283,7 +279,7 @@ function HeroHeader() {
               decoding="async"
               className="absolute inset-0 h-full w-full"
               style={{ color: "transparent" }}
-              src="https://clerk.com/_next/static/media/circuit-lines@2xl.ee1ad3dd.webp"
+              src="/circuit-lines@2xl.6eb893d2.webp"
             />
           </picture>
 
@@ -322,7 +318,7 @@ function HeroHeader() {
               decoding="async"
               className="absolute inset-0 h-full w-full"
               style={{ color: "transparent" }}
-              src="https://clerk.com/_next/static/media/circuit-components@2xr.a0f99055.png"
+              src="/circuit-components@2xl.4a5eabed.webp"
             />
           </picture>
         </div>
@@ -331,12 +327,8 @@ function HeroHeader() {
         <div className="absolute -top-8 right-1/2 origin-right -scale-x-100 sm:top-5 aspect-[969/887] w-[969px]">
           <picture>
             <source
-              srcSet="https://clerk.com/_next/static/media/circuit-components@2xl.4a5eabed.webp"
+              srcSet="/circuit-components@2xl.4a5eabed.webp"
               type="image/webp"
-            />
-            <source
-              srcSet="https://clerk.com/_next/static/media/circuit-components@2xr.a0f99055.png"
-              type="image/png"
             />
             <img
               alt=""
@@ -345,7 +337,7 @@ function HeroHeader() {
               decoding="async"
               className="absolute inset-0 h-full w-full"
               style={{ color: "transparent" }}
-              src="https://clerk.com/_next/static/media/circuit-lines@2xl.ee1ad3dd.webp"
+              src="/circuit-components@2xl.4a5eabed.webp"
             />
           </picture>
 
@@ -365,14 +357,6 @@ function HeroHeader() {
           </div>
 
           <picture>
-            <source
-              srcSet="https://clerk.com/_next/static/media/circuit-lines@2xl.6eb893d2.webp"
-              type="image/webp"
-            />
-            <source
-              srcSet="https://clerk.com/_next/static/media/circuit-lines@2xr.7a1a20ee.png"
-              type="image/png"
-            />
             <img
               alt=""
               width={1938}
@@ -380,7 +364,7 @@ function HeroHeader() {
               decoding="async"
               className="absolute inset-0 h-full w-full"
               style={{ color: "transparent" }}
-              src="https://clerk.com/_next/static/media/circuit-lines@2xl.6eb893d2.webp"
+              src="/circuit-lines@2xl.6eb893d2.webp"
             />
           </picture>
         </div>
