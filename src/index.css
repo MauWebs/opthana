@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'suisse-600';
-  src: url('https://clerk.com/_next/static/media/d9478c0c6e4d6b06-s.p.woff2') format("woff2");
+  src: url('/fonts/suisse-600.woff2') format("woff2");
   font-display: swap;
   font-weight: 600;
   font-style: normal
