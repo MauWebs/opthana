@@ -262,7 +262,7 @@ export default function ContactModal() {
                     data-lpignore="true"
                     value={formData.contact_name}
                     onChange={handleChange}
-                    className="h-8 w-full rounded-md px-3 text-[13px] transition-colors duration-200 bg-white placeholder:text-[#5E5F6E] outline-none focus:bg-[#F3F4F6]"
+                    className="h-8 w-full rounded-md px-3 text-[13px] transition-colors duration-200 bg-white text-[#000]/80 placeholder:text-[#5E5F6E] outline-none focus:bg-[#F3F4F6]"
                     style={{ boxShadow: errors.contact_name ? "0 0 0 1px #ef4444" : "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px" }}
                     placeholder="Ingresa tu nombre"
                   />
@@ -280,7 +280,7 @@ export default function ContactModal() {
                     data-lpignore="true"
                     value={formData.contact_email}
                     onChange={handleChange}
-                    className="h-8 w-full rounded-md px-3 text-[13px] transition-colors duration-200 bg-white placeholder:text-[#5E5F6E] outline-none focus:bg-[#F3F4F6]"
+                    className="h-8 w-full rounded-md px-3 text-[13px] transition-colors duration-200 bg-white text-[#000]/80 placeholder:text-[#5E5F6E] outline-none focus:bg-[#F3F4F6]"
                     style={{ boxShadow: errors.contact_email ? "0 0 0 1px #ef4444" : "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px" }}
                     placeholder="Ingresa tu correo electrónico"
                   />
@@ -297,7 +297,7 @@ export default function ContactModal() {
                     autoCapitalize="off"
                     value={formData.contact_message}
                     onChange={handleChange}
-                    className="w-full rounded-md p-3 text-[13px] transition-colors duration-200 bg-white placeholder:text-[#5E5F6E] outline-none resize-none min-h-[80px] focus:bg-[#F3F4F6]"
+                    className="w-full rounded-md p-3 text-[13px] transition-colors duration-200 bg-white text-[#000]/80 placeholder:text-[#5E5F6E] outline-none resize-none min-h-[80px] focus:bg-[#F3F4F6]"
                     style={{
                       boxShadow: errors.contact_message ? "0 0 0 1px #ef4444" :
                         "rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px",
