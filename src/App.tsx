@@ -326,10 +326,6 @@ function HeroHeader() {
         {/* Circuit Left (mirrored) */}
         <div className="absolute -top-8 right-1/2 origin-right -scale-x-100 sm:top-5 aspect-[969/887] w-[969px]">
           <picture>
-            <source
-              srcSet="/circuit-components@2xl.4a5eabed.webp"
-              type="image/webp"
-            />
             <img
               alt=""
               width={1938}
@@ -337,7 +333,7 @@ function HeroHeader() {
               decoding="async"
               className="absolute inset-0 h-full w-full"
               style={{ color: "transparent" }}
-              src="/circuit-components@2xl.4a5eabed.webp"
+              src="/circuit-lines@2xl.6eb893d2.webp"
             />
           </picture>
 
@@ -364,7 +360,7 @@ function HeroHeader() {
               decoding="async"
               className="absolute inset-0 h-full w-full"
               style={{ color: "transparent" }}
-              src="/circuit-lines@2xl.6eb893d2.webp"
+              src="/circuit-components@2xl.4a5eabed.webp"
             />
           </picture>
         </div>
