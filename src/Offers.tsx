@@ -61,7 +61,6 @@ const PRICING_PLANS = [
 ];
 
 export default function Offers() {
-  const [currency, setCurrency] = useState<"ARG" | "USD">("ARG");
   const { openModal } = useContactModal();
 
   return (
