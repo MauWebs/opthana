@@ -172,7 +172,7 @@ export default function Offers() {
                             <div className="text-[12px] font-medium tracking-[0.01em] text-gray-600">
                               {plan.description}
                             </div>
-                            <div className="mt-3 flex items-center gap-x-1.5">
+                            {/* <div className="mt-3 flex items-center gap-x-1.5">
                               <div className="text-[22px] font-bold tracking-[0.02em] text-black">
                                 {currency === "ARG" ? plan.priceArg : plan.priceUsd}
                               </div>
@@ -205,7 +205,7 @@ export default function Offers() {
                               >
                                 USD
                               </button>
-                            </div>
+                            </div> */}
                           </div>
                           <div className="border-y border-black/[0.03] p-4">
                             <button
