@@ -58,7 +58,7 @@ export default function FAQs() {
   ];
 
   return (
-<div className="w-full bg-[#F9FAFB] pb-16 md:pb-20 lg:pb-24">
+<div id="faqs" className="w-full bg-[#F9FAFB] pb-16 md:pb-20 lg:pb-24 scroll-mt-28">
   <div className="mx-auto w-full px-6 sm:max-w-[40rem] md:max-w-[48rem] md:px-8 lg:max-w-[64rem] xl:max-w-[80rem]">
     
     <section className="relative mx-auto max-w-[63rem] sm:pb-20 sm:pt-10">
@@ -122,10 +122,13 @@ export default function FAQs() {
                     </svg>
                   </button>
                   <div
-                    className={`overflow-hidden transition-[max-height] duration-300 text-[#42434d]/75 text-[12.5px] tracking-[.4px]`}
-                    style={{ maxHeight: isOpen ? "500px" : "0" }}
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+                  >
+                    <div
+                      className="overflow-hidden text-[#42434d]/75 text-[12.5px] tracking-[.4px]"
                     dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\*\*(.*?)\*\*/g, '<span class="suisse-600 underline">$1</span>') }}
                   />
+                  </div>
                 </div>
               );
             })}

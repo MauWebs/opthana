@@ -111,6 +111,17 @@ export default function Navbar() {
                       <a href="#faqs" className="px-2 py-1 text-[#131316] transition-colors duration-500 ease-in-out group-hover/nav:text-gray-500/85 hover:!text-[#131316]">Preguntas</a>
                     </li>
 
+                    <li className="flex">
+                      <a 
+                        href="https://tiendademauriciovidal.mitiendanube.com/?exit_preview_theme_installation" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="px-2 py-1 text-[#131316] transition-colors duration-500 ease-in-out group-hover/nav:text-gray-500/85 hover:!text-[#131316]"
+                      >
+                        Tienda
+                      </a>
+                    </li>
+
                   </ul>
                 </div>
               </nav>
@@ -247,18 +258,27 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {isMenuOpen && (
-              <div className="-mt-5 py-2.5 px-3 md:hidden transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow,background] duration-[450ms] ease-[cubic-bezier(0.33,1,0.68,1)] hover:duration-200 m-auto w-[76.75rem] max-w-[calc(100vw-1rem)] rounded-xl md:max-w-[calc(100vw-2rem)] bg-[rgba(243,243,244,0.90)] backdrop-blur-[5px] [box-shadow:0_-0.5px_0_0_rgba(255,255,255,0.8)_inset,0_0_0_0.5px_rgba(19,19,22,0.15),0_2px_3px_0_rgba(0,0,0,0.04),0_4px_6px_0_rgba(34,42,53,0.04),0_1px_1px_0_rgba(0,0,0,0.05)] cursor-default">
-                <ul className="flex flex-col gap-1 text-[13px] suisse tracking-[.4px] text-[#131316] cursor-default">
+              <div className="-mt-5 py-2.5 px-3 md:hidden w-full rounded-xl bg-[rgba(243,243,244,0.90)] backdrop-blur-[5px] [box-shadow:0_-0.5px_0_0_rgba(255,255,255,0.8)_inset,0_0_0_0.5px_rgba(19,19,22,0.15),0_2px_3px_0_rgba(0,0,0,0.04),0_4px_6px_0_rgba(34,42,53,0.04),0_1px_1px_0_rgba(0,0,0,0.05)]">
+                <ul className="flex flex-col gap-1 text-[13px] suisse tracking-[.4px] text-[#131316]">
                   <li>
-                    <div className="flex items-center rounded-md transition-colors mt-4 -mb-[3px] text-[11px] cursor-default">
-                      <a href="#services"  className="cursor-pointer flex items-center">
+                    <div className="flex flex-col rounded-md transition-colors mt-4 -mb-[3px] text-[11px]">
+                      <a href="#services" onClick={() => setIsMenuOpen(false)} className="block w-full px-2 py-1 hover:bg-gray-100 rounded-md">
                         Servicios
                       </a>
-                      <a href="#offers"  className="cursor-pointer flex items-center ml-3">
+                      <a href="#offers" onClick={() => setIsMenuOpen(false)} className="block w-full px-2 py-1 hover:bg-gray-100 rounded-md">
                         Ofertas
                       </a>
-                      <a href="#faqs" className="cursor-pointer flex items-center ml-3">
+                      <a href="#faqs" onClick={() => setIsMenuOpen(false)} className="block w-full px-2 py-1 hover:bg-gray-100 rounded-md">
                         Preguntas
+                      </a>
+                      <a 
+                        href="https://tiendademauriciovidal.mitiendanube.com/?exit_preview_theme_installation" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMenuOpen(false)} 
+                        className="block w-full px-2 py-1 hover:bg-gray-100 rounded-md"
+                      >
+                        Tienda
                       </a>
                     </div>
                   </li>
